@@ -1,14 +1,14 @@
-import Footer from "../../components/footer/footer";
-import Header from "../../components/header/header";
-
+import { FC } from "react";
+import Footer from "../../components/website/footer/footer";
+import Header from "../../components/website/header/header";
 interface Props {
     children: React.ReactNode;
 }
-const WebsiteLayout = ({children}:Props) => {
+const WebsiteLayout:FC<Props> = ({children}) => {
     return (
         <div>
             <Header />
-            {children}
+            <main className="container mx-auto p-2">{children}</main>
             <Footer />
         </div>
     );
