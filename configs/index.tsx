@@ -1,4 +1,6 @@
-export const API = 'API'
+import moment from "moment"
+
+export const API_POSTS = '/posts'
 export const NAV_WEBSITE = [
     {
         title : "Trang chủ",
@@ -17,3 +19,6 @@ export const NAV_WEBSITE = [
         link : "/contact",
     }
 ]
+export const convertISOstringToDate = (date: string) => {
+    return moment(date).format("DD/MMM/YYYY")
+}
