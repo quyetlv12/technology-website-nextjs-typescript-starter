@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import Header from "../../components/admin/header/header";
-import Sidebar from "../../components/admin/sidebar/sidebar";
+import Header from "../../components/molecules/website/header/header";
+import Sidebar from "../../components/molecules/admin/sidebar/sidebar";
 
 interface Props {
   children: ReactNode;
