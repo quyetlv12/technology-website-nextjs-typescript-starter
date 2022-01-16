@@ -1,10 +1,9 @@
 import type { NextPage } from 'next'
-import Button from '../components/atoms/button/button'
 
 const Home: NextPage = () => {
   return (
     <div>
-      
+      đây là trang chủ
     </div>
   )
 }

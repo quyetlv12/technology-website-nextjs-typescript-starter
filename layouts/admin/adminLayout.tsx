@@ -1,11 +1,11 @@
-import { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import Header from "../../components/molecules/website/header/header";
 import Sidebar from "../../components/molecules/admin/sidebar/sidebar";
 
 interface Props {
   children: ReactNode;
 }
-const AdminLayout = ({ children }: Props) => {
+const AdminLayout:FC<Props> = ({ children }) => {
   return (
     <div>
       <Header />
