@@ -1,10 +1,10 @@
+import { InferGetStaticPropsType } from "next";
 import Card from "../../components/molecules/website/card/card";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import PostService from "../../services/post.service";
 import { PostInterface } from "../../interfaces/post.interface";
+import PostService from "../../services/post.service";
 export const getStaticProps = async () => {
   const res = await PostService.getPosts();
-  const posts = res.data || [];
+  const posts = res.data || [];  
   return {
     props: {
       posts,
@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
 };
 const News = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   console.log(posts);
-
+  
   return (
     <div className="mt-2">
       {posts.map((_post: PostInterface, index: number) => (

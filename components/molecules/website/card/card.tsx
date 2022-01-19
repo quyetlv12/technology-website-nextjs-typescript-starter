@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
 import { convertISOstringToDate } from "../../../../configs";
 import { PostInterface } from "../../../../interfaces/post.interface";
@@ -10,6 +11,8 @@ const Card: FC<Props> = ({ item ,className }) => {
   return (
     <div className={`max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800 mb-2 hover:shadow-2xl hover:delay-200 ${className}`}>
       <div className="flex items-center justify-between">
+        <div>
+        </div>
         <span className="text-sm font-light text-gray-600 dark:text-gray-400">
           {convertISOstringToDate(item?.createdDate)}
         </span>
@@ -29,12 +32,9 @@ const Card: FC<Props> = ({ item ,className }) => {
         </p>
       </div>
       <div className="flex items-center justify-between mt-4">
-        <a
-          href="#"
-          className="text-blue-600 dark:text-blue-400 hover:underline"
-        >
-          Xem thêm
-        </a>
+       <Link href={`news/post/${item?.id}`}>
+         <a>Đọc thêm</a>
+       </Link>
         <div className="flex items-center">
          <Image
            width={40}
