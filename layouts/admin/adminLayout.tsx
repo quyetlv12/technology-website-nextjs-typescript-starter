@@ -8,9 +8,9 @@ interface Props {
 const AdminLayout:FC<Props> = ({ children }) => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <main className="py-2 mx-auto">{children}</main>
-      <Sidebar />
+      {/* <Sidebar /> */}
     </div>
   );
 };

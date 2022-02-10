@@ -1,4 +1,5 @@
 import moment from "moment"
+import { TimeInterface } from "../interfaces/utility"
 
 export const API_POSTS = '/posts'
 export const NAV_WEBSITE = [
@@ -12,13 +13,13 @@ export const NAV_WEBSITE = [
     },
     {
         title : "Danh mục",
-        link : "/category",
+        link : "/categories",
     },
     {
         title : "Liên hệ",
         link : "/contact",
     }
 ]
-export const convertISOstringToDate = (date: string) => {
+export const convertISOstringToDate = (date: TimeInterface) => {
     return moment(date).format("DD/MMM/YYYY")
 }

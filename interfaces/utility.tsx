@@ -1,0 +1,1 @@
+export type TimeInterface = string | undefined

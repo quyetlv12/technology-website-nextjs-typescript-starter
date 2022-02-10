@@ -7,5 +7,6 @@ export interface PostInterface {
     like? : number,
     comment? : [],
     categoryId : number,
-    readonly createdDate : string
+    createdDate?: string,
+    tag?: string
 }
