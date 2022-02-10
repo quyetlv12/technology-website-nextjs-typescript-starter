@@ -1,9 +1,5 @@
 const Sidebar = () => {
-    return (
-        <div>
-            Enter
-        </div>
-    );
-}
+  return <></>;
+};
 
 export default Sidebar;

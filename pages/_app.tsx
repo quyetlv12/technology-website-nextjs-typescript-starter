@@ -6,7 +6,12 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
   const isAdminPage = pathname.includes("/admin");
-
+  // if (typeof window !== undefined) {
+  //   console.log("isClient");
+  // }else{
+  //   console.log('isSeverside'); 
+    
+  // }
   return (
     <div>
       {isAdminPage ? (

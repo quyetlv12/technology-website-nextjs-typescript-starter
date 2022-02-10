@@ -1,8 +1,7 @@
 const Categories = () => {
     return (
-        <div>
-            category
-        </div>
+      <div></div>
+
     );
 }
 
