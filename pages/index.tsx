@@ -4,7 +4,7 @@ import Link from "next/link";
 const Home: NextPage = () => {
   return (
     <div>
-      <div className="bg-gray-100">
+      <div >
         {/* featured */}
         <div className="max-w-5xl mx-auto pt-10 pb-10">
           <ul className="flex flex-wrap -mx-2 overflow-hidden">
