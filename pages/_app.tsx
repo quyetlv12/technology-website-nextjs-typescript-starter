@@ -1,8 +1,10 @@
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import AdminLayout from "../layouts/admin/adminLayout";
 import WebsiteLayout from "../layouts/website/websiteLayout";
 import "../styles/globals.css";
+import { checkTypeWindow } from "../utility";
 function MyApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
   const isAdminPage = pathname.includes("/admin");
@@ -10,8 +12,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   //   console.log("isClient");
   // }else{
   //   console.log('isSeverside'); 
-    
   // }
+  useEffect(() => {
+   console.log(checkTypeWindow());
+   
+  }, [])
+  
   return (
     <div>
       {isAdminPage ? (

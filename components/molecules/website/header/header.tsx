@@ -29,11 +29,11 @@ const Header = () => {
           {NAV_WEBSITE.map((_elt, index) => (
             <Link href={_elt.link} key={index}>
               <a
-                className={`mr-3 ${
+                className={` ${
                   pathname === _elt.link
                     ? "text-yellow-500 bg-white p-2 rounded-lg"
                     : ""
-                }`}
+                } mr-3`}
               >
                 {_elt.title}
               </a>
@@ -42,11 +42,25 @@ const Header = () => {
         </nav>
         <div className="gap-4">
           <Link href="/login">
-            <a><Button title="Đăng nhập" classname={`${pathname === "/login" ? "bg-yellow-500" : "bg-black"}  p-2 rounded-lg ml-2`}/></a>
+            <a>
+              <Button
+                title="Đăng nhập"
+                classname={`${
+                  pathname === "/login" ? "bg-yellow-500" : "bg-black"
+                }  p-2 rounded-lg ml-2`}
+              />
+            </a>
           </Link>
-         <Link href="/signup">
-           <a><Button title="Đăng kí" classname={`${pathname === "/signup" ? "bg-yellow-500" : "bg-black"}  p-2 rounded-lg ml-2`}/></a>
-         </Link>
+          <Link href="/signup">
+            <a>
+              <Button
+                title="Đăng kí"
+                classname={`${
+                  pathname === "/signup" ? "bg-yellow-500" : "bg-black"
+                }  p-2 rounded-lg ml-2`}
+              />
+            </a>
+          </Link>
         </div>
       </div>
     </header>

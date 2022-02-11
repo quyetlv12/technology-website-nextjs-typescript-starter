@@ -1,124 +1,6 @@
 const Footer = () => {
   return (
     <footer className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
-          <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
-            </nav>
-          </div>
-          <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
-            </nav>
-          </div>
-          <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
-            </nav>
-          </div>
-          <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
-            </nav>
-          </div>
-          <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
-            </nav>
-          </div>
-          <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
-            </nav>
-          </div>
-        </div>
-      </div>
       <div className="border-t border-gray-200">
         <div className="container px-5 py-8 flex flex-wrap mx-auto items-center">
           <div className="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-start">
@@ -127,7 +9,7 @@ const Footer = () => {
                 htmlFor="footer-field"
                 className="leading-7 text-sm text-gray-600"
               >
-                Placeholder
+                Đăng kí email để nhận tin mới nhất
               </label>
               <input
                 type="text"
@@ -137,13 +19,8 @@ const Footer = () => {
               />
             </div>
             <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-              Button
+              Đăng kí
             </button>
-            <p className="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center">
-              Bitters chicharrones fanny pack
-              <br className="lg:block hidden" />
-              waistcoat green juice
-            </p>
           </div>
           <span className="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
             <a className="text-gray-500">
