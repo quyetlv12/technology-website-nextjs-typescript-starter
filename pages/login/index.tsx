@@ -1,13 +1,17 @@
+import Image from "next/image";
+
 const Login = () => {
   return (
     <>
       {/* component */}
       <section className="flex flex-col md:flex-row h-screen items-center pt-2">
-        <div className="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen rounded-lg">
-          <img
-            src="https://source.unsplash.com/random"
-            alt=""
-            className="w-full h-full object-cover"
+        <div className="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen rounded-full">
+          <Image
+            width={800}
+            height={800}
+            objectFit="cover"
+            src={"https://source.unsplash.com/random"}
+            alt="image login"
           />
         </div>
         <div
