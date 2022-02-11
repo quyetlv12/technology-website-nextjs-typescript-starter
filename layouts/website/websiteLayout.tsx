@@ -6,15 +6,6 @@ interface Props {
   children: React.ReactNode;
 }
 const WebsiteLayout: FC<Props> = ({ children }) => {
-  const router = useRouter()  
-  if (typeof window !== undefined) {
-    console.log(router);
-    
-  }else{
-    console.log("server");
-    
-  }
-  
   return (
     <div>
       <Header />

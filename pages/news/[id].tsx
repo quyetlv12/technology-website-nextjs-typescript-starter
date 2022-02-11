@@ -52,6 +52,8 @@ export async function getStaticProps({params}:any) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const {data:posts} = await PostService.getPosts() //fetch api get all products and return props
+
+  // create paths
   const paths = posts.map((post:any) =>{
     return {
       params : {
@@ -59,6 +61,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       }
     }
   })
+  // ==> return path to params 
   return {
     paths,
     fallback: true
