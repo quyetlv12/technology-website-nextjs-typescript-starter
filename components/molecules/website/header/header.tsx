@@ -25,7 +25,7 @@ const Header = () => {
             <span className="ml-3 text-xl text-white uppercase">MY BLOG</span>
           </a>
         </Link>
-        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <nav className="md:ml-auto md:mr-auto lg:block md:block sm:hidden flex flex-wrap items-center text-base justify-center">
           {NAV_WEBSITE.map((_elt, index) => (
             <Link href={_elt.link} key={index}>
               <a

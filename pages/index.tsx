@@ -1,14 +1,27 @@
-import type { NextPage } from "next";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import type { InferGetStaticPropsType, NextPage } from "next";
+import { GetStaticProps } from "next";
+import Head from "next/head";
 import Link from "next/link";
+import CategoriesCard from "../components/atoms/card/categories";
 import PostSection from "../components/molecules/website/postSection/postSection";
 import PostService from "../services/post.service";
 
-const Home: NextPage = ({
-  posts,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home: NextPage = ({posts}:InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div>
+      <Head>
+        <title>Blogger</title>
+    </Head>
+      {/* categories */}
+      <div className="flex flex-wrap w-full mb-4 p-4">
+            <div className="w-full mb-6 lg:mb-0">
+              <h1 className="sm:text-[2rem] md:tex[2xl] lg:text-[5xl]  font-bold title-font mb-2 text-gray-900">
+               Danh mục tìm kiếm nhiều nhất
+              </h1>
+              <div className="h-1 w-20 bg-indigo-500 rounded" />
+            </div>
+          </div>
+      <CategoriesCard/>
       <div>
         {/* featured */}
         <div className="max-w-5xl mx-auto pt-10 pb-10">
@@ -99,14 +112,14 @@ const Home: NextPage = ({
     </div>
   );
 };
-
-export const getStaticProps: GetStaticProps = async (ctx) => {
-  const { data: posts } = await PostService.getPosts(); // your fetch function here
+//fetch api
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await PostService.getPosts() // your fetch function here 
   return {
     props: {
-      posts,
-    },
-  };
-};
+      posts : data
+    }
+  }
+}
 
 export default Home;
