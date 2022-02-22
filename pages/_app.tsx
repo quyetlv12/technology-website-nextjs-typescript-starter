@@ -13,10 +13,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   // }else{
   //   console.log('isSeverside'); 
   // }
-  useEffect(() => {
-   console.log(checkTypeWindow());
+  // useEffect(() => {
+  //  console.log(checkTypeWindow());
    
-  }, [])
+  // }, [])
   
   return (
     <div>
