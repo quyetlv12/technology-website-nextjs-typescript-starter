@@ -21,9 +21,9 @@ const PostSection: FC<PostProps> = ({ title = "Tin tức" ,posts }) => {
             </div>
           </div>
           <div className="flex flex-wrap -m-4">
-            {/* {posts.map((_post: PostInterface) => (
+            {posts.map((_post: PostInterface) => (
               <Card _post={_post} />
-            ))} */}
+            ))}
           </div>
         </div>
       </section>
