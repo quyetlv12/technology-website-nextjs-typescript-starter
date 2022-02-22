@@ -5,8 +5,9 @@ import Card from "../../../atoms/card/Card";
 interface PostProps {
   title?: string;
   posts: [];
+  maxWidth? : number;
 }
-const PostSection: FC<PostProps> = ({ title = "Tin tức" ,posts }) => {
+const PostSection: FC<PostProps> = ({ title = "Tin tức" ,posts , maxWidth }) => {
   return (
     <>
       {/* component */}
@@ -22,7 +23,7 @@ const PostSection: FC<PostProps> = ({ title = "Tin tức" ,posts }) => {
           </div>
           <div className="flex flex-wrap -m-4">
             {posts.map((_post: PostInterface) => (
-              <Card _post={_post} />
+              <Card _post={_post} maxWidth={maxWidth} />
             ))}
           </div>
         </div>

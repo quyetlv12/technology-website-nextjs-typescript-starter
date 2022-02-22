@@ -8,6 +8,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.5.0",
+    "@heroicons/react": "^1.0.5",
     "@types/lodash": "^4.14.178",
     "axios": "^0.24.0",
     "lodash": "^4.17.21",
@@ -15,7 +17,8 @@
     "next": "12.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-hook-form": "^7.27.1"
+    "react-hook-form": "^7.27.1",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
     "@types/node": "17.0.8",
