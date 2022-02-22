@@ -1,19 +1,20 @@
 import moment from "moment"
 import { TimeInterface } from "../interfaces/utility"
-
+import { BsNewspaper } from "react-icons/bs";
 export const API_POSTS = '/posts'
 export const NAV_WEBSITE = [
     {
         title : "Trang chủ",
         link : "/",
+        icon : <BsNewspaper/>
     },
     {
         title : "Tin tức",
         link : "/news",
     },
     {
-        title : "Danh mục",
-        link : "/categories",
+        title : "Về chúng tôi",
+        link : "/about",
     },
     {
         title : "Liên hệ",

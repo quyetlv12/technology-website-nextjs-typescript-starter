@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { NAV_WEBSITE } from "../../../../configs";
-import Button from "../../../atoms/button/button";
-
+import Dropdown from "./Dropdown";
 const Header = () => {
   const { pathname } = useRouter();
+
   return (
-    <header className="text-white body-font bg-gray-700">
+    <header className="text-white body-font bg-indigo-500">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <Link href="/">
+        <Link href="/" >
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -27,41 +27,22 @@ const Header = () => {
         </Link>
         <nav className="md:ml-auto md:mr-auto lg:block md:block sm:hidden flex flex-wrap items-center text-base justify-center">
           {NAV_WEBSITE.map((_elt, index) => (
-            <Link href={_elt.link} key={index}>
-              <a
-                className={` ${
-                  pathname === _elt.link
-                    ? "text-yellow-500 bg-white p-2 rounded-lg"
-                    : ""
-                } mr-3`}
-              >
-                {_elt.title}
-              </a>
-            </Link>
+            <span>
+              <Link href={_elt.link} key={index}>
+                <a
+                  className={` ${
+                    pathname === _elt.link
+                      ? "text-yellow-500 bg-white p-2 rounded-lg"
+                      : ""
+                  } mr-3 px-4`}
+                >
+                  <span>{_elt.title}</span>
+                </a>
+              </Link>
+            </span>
           ))}
         </nav>
-        <div className="gap-4">
-          <Link href="/login">
-            <a>
-              <Button
-                title="Đăng nhập"
-                classname={`${
-                  pathname === "/login" ? "bg-yellow-500" : "bg-black"
-                }  p-2 rounded-lg ml-2`}
-              />
-            </a>
-          </Link>
-          <Link href="/signup">
-            <a>
-              <Button
-                title="Đăng kí"
-                classname={`${
-                  pathname === "/signup" ? "bg-yellow-500" : "bg-black"
-                }  p-2 rounded-lg ml-2`}
-              />
-            </a>
-          </Link>
-        </div>
+        <Dropdown />
       </div>
     </header>
   );
