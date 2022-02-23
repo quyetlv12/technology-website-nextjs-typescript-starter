@@ -40,32 +40,32 @@ const DetailPost: FC<Props> = ({ post }) => {
     </main>
   );
 };
-// export async function getStaticProps({params}:any) {
-//   const {id} = params
-//   const {data:post} = await PostService.getPost(id) // get info post
-//   return {
-//       props: {
-//           post: post
-//       },
-//   };
-// }
+export async function getStaticProps({params}:any) {
+  const {id} = params
+  const {data:post} = await PostService.getPost(id) // get info post
+  return {
+      props: {
+          post: post
+      },
+  };
+}
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const {data:posts} = await PostService.getPosts() //fetch api get all products and return props
+export const getStaticPaths: GetStaticPaths = async () => {
+  const {data:posts} = await PostService.getPosts() //fetch api get all products and return props
 
-//   // create paths
-//   const paths = posts.map((post:any) =>{
-//     return {
-//       params : {
-//         id : post.id
-//       }
-//     }
-//   })
-//   // ==> return path to params 
-//   return {
-//     paths,
-//     fallback: false
-//   }
-// }
+  // create paths
+  const paths = posts.map((post:any) =>{
+    return {
+      params : {
+        id : post.id
+      }
+    }
+  })
+  // ==> return path to params 
+  return {
+    paths,
+    fallback: false
+  }
+}
 
 export default DetailPost;
