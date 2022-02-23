@@ -13,7 +13,7 @@ const Signup = () => {
   return (
     <div className="lg:flex">
       <div className="lg:w-1/2 xl:max-w-screen-sm">
-        <div className="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-center lg:px-12 lg:py-2">
+        <div className="py-12 bg-indigo-100 lg:bg-white hidden md:flex justify-center lg:justify-center lg:px-12 lg:py-2">
           <div className="cursor-pointer flex items-center">
             <div>
               <svg

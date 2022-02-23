@@ -10,9 +10,9 @@ const Login = () => {
     console.log(data);
   };
   return (
-    <div className="lg:flex shadow-md">
+    <div className="lg:flex shadow-md mb-3">
       <div className="lg:w-1/2 xl:max-w-screen-sm">
-        <div className="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-center lg:px-12">
+        <div className="py-12 bg-indigo-100 lg:bg-white hidden md:flex justify-center lg:justify-center lg:px-12">
           <div className="cursor-pointer flex items-center">
             <div>
               <svg
