@@ -2,12 +2,21 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { NAV_WEBSITE } from "../../../../configs";
 import Dropdown from "./Dropdown";
+import { AiOutlineMenu } from "react-icons/ai";
+import SidebarMobile from "../sidebarMobile/SidebarMobile";
+import { useState } from "react";
 const Header = () => {
   const { pathname } = useRouter();
-
+  const [isOpenSideBar, setIsOpenSideBar] = useState(false)
+  const toggle = () =>{
+    setIsOpenSideBar(!isOpenSideBar)
+  }
   return (
     <header className="text-white body-font bg-indigo-500">
-      <nav className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <nav className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between relative">
+        <button className="absolute left-0 ml-3 mt-2 block md:hidden" onClick={toggle}>
+          <AiOutlineMenu size={30} />
+        </button>
         <Link href="/">
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <svg
@@ -25,7 +34,7 @@ const Header = () => {
             <span className="ml-3 text-xl text-white uppercase">MY BLOG</span>
           </a>
         </Link>
-        <div className="md:ml-auto md:mr-auto lg:block md:block sm:hidden flex flex-wrap items-center text-base justify-center">
+        <div className="hidden lg:block">
           <span>
             <Link href={"/"}>
               <a
@@ -81,6 +90,9 @@ const Header = () => {
         </div>
         <Dropdown />
       </nav>
+      <div className="block md:hidden">
+      <SidebarMobile sidebarOpen={isOpenSideBar} toggle={toggle} />
+      </div>
     </header>
   );
 };
