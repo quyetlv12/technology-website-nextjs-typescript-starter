@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header className="text-white body-font bg-indigo-500">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <nav className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href="/" >
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <svg
@@ -25,10 +25,10 @@ const Header = () => {
             <span className="ml-3 text-xl text-white uppercase">MY BLOG</span>
           </a>
         </Link>
-        <nav className="md:ml-auto md:mr-auto lg:block md:block sm:hidden flex flex-wrap items-center text-base justify-center">
-          {NAV_WEBSITE.map((_elt, index) => (
+        <div className="md:ml-auto md:mr-auto lg:block md:block sm:hidden flex flex-wrap items-center text-base justify-center">
+          {/* {NAV_WEBSITE.map((_elt, index) => (
             <span>
-              <Link href={_elt.link} key={index}>
+              <Link href={_elt.link} key={_elt.id}>
                 <a
                   className={` ${
                     pathname === _elt.link
@@ -40,10 +40,10 @@ const Header = () => {
                 </a>
               </Link>
             </span>
-          ))}
-        </nav>
+          ))} */}
+        </div>
         <Dropdown />
-      </div>
+      </nav>
     </header>
   );
 };

@@ -23,7 +23,7 @@ const PostSection: FC<PostProps> = ({ title = "Tin tức" ,posts , maxWidth }) =
           </div>
           <div className="flex flex-wrap -m-4">
             {posts.map((_post: PostInterface) => (
-              <Card _post={_post} maxWidth={maxWidth} />
+              <Card _post={_post} maxWidth={maxWidth} key={_post.id} />
             ))}
           </div>
         </div>
