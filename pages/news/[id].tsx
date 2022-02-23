@@ -1,6 +1,7 @@
 // You should use getStaticPaths if you’re statically pre-rendering pages that use dynamic routes
 import { GetStaticPaths } from "next";
 import { FC } from "react";
+import Comment from "../../components/molecules/website/comment/Comment";
 import SideBar from "../../components/molecules/website/sidebar";
 import { convertISOstringToDate } from "../../configs";
 import { PostInterface } from "../../interfaces/post.interface";
@@ -44,6 +45,7 @@ const DetailPost: FC<Props> = ({ post }) => {
               </div>
             </div>
           </main>
+          <Comment/>
         </div>
       </div>
     </div>
