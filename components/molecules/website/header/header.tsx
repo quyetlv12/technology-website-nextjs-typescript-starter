@@ -26,21 +26,17 @@ const Header = () => {
           </a>
         </Link>
         <div className="md:ml-auto md:mr-auto lg:block md:block sm:hidden flex flex-wrap items-center text-base justify-center">
-          {/* {NAV_WEBSITE.map((_elt, index) => (
-            <span>
-              <Link href={_elt.link} key={_elt.id}>
+        <Link href="/" >
                 <a
                   className={` ${
-                    pathname === _elt.link
+                    pathname === "/"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
                   } mr-3 px-4`}
                 >
-                  <span>{_elt.title}</span>
+                  <span>Trang chủ</span>
                 </a>
               </Link>
-            </span>
-          ))} */}
         </div>
         <Dropdown />
       </nav>
