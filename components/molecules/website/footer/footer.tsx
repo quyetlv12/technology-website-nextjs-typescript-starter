@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="text-white bg-indigo-500 body-font">
       <div className="border-t border-gray-200">
         <div className="container px-5 py-8 flex flex-wrap mx-auto items-center">
-          <div className="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-start">
+          <div className="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-center">
             <div className="relative sm:w-64 w-40 sm:mr-4 mr-2">
               <label
                 htmlFor="footer-field"

@@ -1,6 +1,6 @@
 const ListComment = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-white dark:bg-gray-800">
+    <div className="flex items-center justify-center bg-white dark:bg-gray-800">
       <div className="bg-white dark:bg-gray-800 text-black dark:text-gray-200 p-4 antialiased flex max-w-full">
         <img
           className="rounded-full h-8 w-8 mr-2 mt-1 "

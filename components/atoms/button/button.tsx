@@ -1,11 +1,12 @@
 import { FC } from "react";
 interface Props{
-    title?: string,
-    classname?: string
+    title?: string;
+    classname?: string;
+    onClick? : any;
 } 
-const Button:FC<Props> = ({title = "button" , classname}) => {    
+const Button:FC<Props> = ({title = "button" , classname , onClick}) => {    
     return (
-        <button className={`${classname}`}>{title}</button>
+        <button className={`${classname}`} onClick={() => onClick()}>{title}</button>
     );
 }
 export default Button;
