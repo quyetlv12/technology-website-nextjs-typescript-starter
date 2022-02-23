@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="text-white body-font bg-indigo-500">
       <nav className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <Link href="/" >
+        <Link href="/">
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -26,21 +26,58 @@ const Header = () => {
           </a>
         </Link>
         <div className="md:ml-auto md:mr-auto lg:block md:block sm:hidden flex flex-wrap items-center text-base justify-center">
-          {NAV_WEBSITE.map((_elt, index) => (
-            <span>
-              <Link href={_elt.link} key={_elt.id}>
-                <a
-                  className={` ${
-                    pathname === _elt.link
-                      ? "text-yellow-500 bg-white p-2 rounded-lg"
-                      : ""
-                  } mr-3 px-4`}
-                >
-                  <span>{_elt.title}</span>
-                </a>
-              </Link>
-            </span>
-          ))}
+          <span>
+            <Link href={"/"}>
+              <a
+                className={` ${
+                  pathname === "/"
+                    ? "text-yellow-500 bg-white p-2 rounded-lg"
+                    : ""
+                } mr-3 px-4`}
+              >
+                <span>Trang chủ</span>
+              </a>
+            </Link>
+          </span>
+          <span>
+            <Link href={"/news"}>
+              <a
+                className={` ${
+                  pathname === "/news"
+                    ? "text-yellow-500 bg-white p-2 rounded-lg"
+                    : ""
+                } mr-3 px-4`}
+              >
+                <span>Tin tức</span>
+              </a>
+            </Link>
+          </span>
+          <span>
+            <Link href={"/about"}>
+              <a
+                className={` ${
+                  pathname === "/about"
+                    ? "text-yellow-500 bg-white p-2 rounded-lg"
+                    : ""
+                } mr-3 px-4`}
+              >
+                <span>Về chúng tôi</span>
+              </a>
+            </Link>
+          </span>
+          <span>
+            <Link href={"/contact"}>
+              <a
+                className={` ${
+                  pathname === "/contact"
+                    ? "text-yellow-500 bg-white p-2 rounded-lg"
+                    : ""
+                } mr-3 px-4`}
+              >
+                <span>Liên hệ</span>
+              </a>
+            </Link>
+          </span>
         </div>
         <Dropdown />
       </nav>
