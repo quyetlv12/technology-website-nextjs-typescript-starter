@@ -6,19 +6,23 @@ export const NAV_WEBSITE = [
     {
         title : "Trang chủ",
         link : "/",
-        icon : <BsNewspaper/>
+        id : 1,
     },
     {
         title : "Tin tức",
         link : "/news",
+        id : 2,
+
     },
     {
         title : "Về chúng tôi",
         link : "/about",
+        id : 3
     },
     {
         title : "Liên hệ",
         link : "/contact",
+        id : 4
     }
 ]
 export const convertISOstringToDate = (date: TimeInterface) => {
