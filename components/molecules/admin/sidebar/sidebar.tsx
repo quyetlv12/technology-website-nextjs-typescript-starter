@@ -1,67 +1,60 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { FC } from "react";
 
 interface SidebarProps {
   sidebarOpen?: boolean;
   setSidebarOpen?: any;
 }
-const Sidebar:FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen }) => {
+const Sidebar: FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen }) => {
+  const { pathname } = useRouter();
+  console.log(pathname);
+
   return (
-    <div className="">
-      {/* Sidebar backdrop (mobile only) */}
-      <div
-        className={`fixed inset-0 bg-gray-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${
-          sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none" 
-        }`}
-        aria-hidden="true"
-      ></div>
-
-      {/* Sidebar */}
-      <div
-        id="sidebar"
-        // ref={sidebar}
-        className={`absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 flex-shrink-0 bg-indigo-500 p-4 transition-transform duration-200 ease-in-out ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-64"
-        }`}
-      >
-        {/* Sidebar header */}
-        <div className="flex justify-between mb-10 pr-3 sm:px-2">
-          {/* Close button */}
-          <button
-            // ref={trigger}
-            className="lg:hidden text-white hover:text-gray-400"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            aria-controls="sidebar"
-            aria-expanded={sidebarOpen}
+    <aside className="w-80 h-screen bg-gray w-fulll hidden sm:block shadow-lg">
+      <div className="flex flex-col justify-between h-screen p-4 bg-indigo-500">
+        <div className="text-sm">
+          <div
+            className={`bg-indigo-700 shadow-sm text-white p-5 rounded cursor-pointer text-center uppercase font-bold text-lg `}
           >
-            <span className="sr-only">Close sidebar</span>
-            <svg
-              className="w-6 h-6 fill-current"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M10.7 18.7l1.4-1.4L7.8 13H20v-2H7.8l4.3-4.3-1.4-1.4L4 12z" />
-            </svg>
-          </button>
-          {/* Logo */}
-          {/* <NavLink
-        exact
-        to="/"
-        className="w-full h-[30px] flex lg:justify-center md:justify-end sm:justify-end leading-[10px] "
-      >
-        <button className="text-gray-800 bg-white p-2 lg:w-full rounded-lg hover:bg-green-600 hover:text-white hover:border-2  transition ease-in duration-700">
-          Website
-        </button>
-      </NavLink> */}
-        </div>
-
-        {/* Links */}
-        <div>
-          <h2 className="text-xs uppercase text-white font-semibold pl-3 text-center">
             Danh mục quản lý
-          </h2>
+          </div>
+
+          <Link href="/admin/">
+            <div
+              className={` text-white p-2 rounded mt-2 cursor-pointer hover:bg-indigo-600 hover:text-blue-300 ${
+                pathname === "/admin" ? "bg-indigo-800" : "bg-indigo-600"
+              }`}
+            >
+              <a>Tổng quan</a>
+            </div>
+          </Link>
+
+          <Link href="/admin/news">
+            <div
+              className={` text-white p-2 rounded mt-2 cursor-pointer hover:bg-indigo-600 hover:text-blue-300 ${
+                pathname === "/admin/news" ? "bg-indigo-800" : "bg-indigo-600"
+              }`}
+            >
+              <a>Bài viết</a>
+            </div>
+          </Link>
+        </div>
+        <div className="flex p-3 text-white bg-red-500 rounded cursor-pointer text-center text-sm">
+          <button className="rounded inline-flex items-center">
+            <svg
+              className="w-4 h-4 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" />
+            </svg>
+            <span className="font-semibold">Đăng xuất</span>
+          </button>
         </div>
       </div>
-    </div>
+    </aside>
   );
 };
 
