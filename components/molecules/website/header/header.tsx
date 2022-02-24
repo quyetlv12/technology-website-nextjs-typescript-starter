@@ -51,7 +51,7 @@ const Header = () => {
                   pathname === "/"
                     ? "text-yellow-500 bg-white p-2 rounded-lg"
                     : ""
-                } mr-3 px-4`}
+                } mr-3 px-4 font-bold`}
               >
                 <span>Trang chủ</span>
               </a>
@@ -64,7 +64,7 @@ const Header = () => {
                   pathname === "/news"
                     ? "text-yellow-500 bg-white p-2 rounded-lg"
                     : ""
-                } mr-3 px-4`}
+                } mr-3 px-4 font-bold`}
               >
                 <span>Tin tức</span>
               </a>
@@ -77,7 +77,7 @@ const Header = () => {
                   pathname === "/about"
                     ? "text-yellow-500 bg-white p-2 rounded-lg"
                     : ""
-                } mr-3 px-4`}
+                } mr-3 px-4 font-bold`}
               >
                 <span>Về chúng tôi</span>
               </a>
@@ -90,7 +90,7 @@ const Header = () => {
                   pathname === "/contact"
                     ? "text-yellow-500 bg-white p-2 rounded-lg"
                     : ""
-                } mr-3 px-4`}
+                } mr-3 px-4 font-bold`}
               >
                 <span>Liên hệ</span>
               </a>

@@ -11,12 +11,14 @@ const Footer = () => {
               >
                 Đăng kí email để nhận tin mới nhất
               </label>
-              <input
-                type="text"
-                id="footer-field"
-                name="footer-field"
-                className="w-full bg-white bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:bg-transparent focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
+              <div className="d-flex justify-center">
+                <input
+                  type="text"
+                  id="footer-field"
+                  name="footer-field"
+                  className="w-full bg-white bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:bg-transparent focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                />
+              </div>
             </div>
             <button className="inline-flex text-black bg-white border-0 py-2 px-6 focus:outline-none rounded">
               Đăng kí

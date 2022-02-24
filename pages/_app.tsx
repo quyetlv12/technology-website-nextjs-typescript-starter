@@ -1,35 +1,30 @@
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
-import AdminLayout from "../layouts/admin/adminLayout";
 import WebsiteLayout from "../layouts/website/websiteLayout";
+import Router from "next/router";
+import NProgress from "nprogress";
+import 'nprogress/nprogress.css';
 import "../styles/globals.css";
-import { checkTypeWindow } from "../utility";
+import "../styles/style.css";
+NProgress.configure({ showSpinner: true });
+Router.events.on("routeChangeStart", () => {
+  NProgress.start();
+});
+
+Router.events.on("routeChangeComplete", () => {
+  NProgress.done();
+});
+Router.events.on("routeChangeError", () => {
+  NProgress.done();
+});
 function MyApp({ Component, pageProps }: AppProps) {
-  const { pathname } = useRouter();
+  const { pathname, events } = useRouter();
   const isAdminPage = pathname.includes("/admin");
-  // if (typeof window !== undefined) {
-  //   console.log("isClient");
-  // }else{
-  //   console.log('isSeverside'); 
-  // }
-  // useEffect(() => {
-  //  console.log(checkTypeWindow());
-   
-  // }, [])
-  
+
   return (
-    <div>
-      {isAdminPage ? (
-        <AdminLayout>
-          <Component {...pageProps} />
-        </AdminLayout>
-      ) : (
-        <WebsiteLayout>
-          <Component {...pageProps} />
-        </WebsiteLayout>
-      )}
-    </div>
+    <WebsiteLayout>
+      <Component {...pageProps} />
+    </WebsiteLayout>
   );
 }
 

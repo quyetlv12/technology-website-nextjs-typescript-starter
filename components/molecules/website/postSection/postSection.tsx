@@ -11,7 +11,7 @@ const PostSection: FC<PostProps> = ({ title = "Tin tức" ,posts , maxWidth }) =
   return (
     <>
       {/* component */}
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font mb-5">
         <div className="container px-5 py-1 mx-auto max-w-7x1">
           <div className="flex flex-wrap w-full mb-4 p-4">
             <div className="w-full mb-6 lg:mb-0">

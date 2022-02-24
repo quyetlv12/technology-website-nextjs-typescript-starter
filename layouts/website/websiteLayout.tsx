@@ -9,7 +9,7 @@ const WebsiteLayout: FC<Props> = ({ children }) => {
   return (
     <div>
       <Header />
-      <main className="max-w-5xl mx-auto">
+      <main className="max-w-5xl mx-auto overflow-y-hidden">
         <div className="flex flex-wrap overflow-hidden">
           <div className="w-full">
           {children}

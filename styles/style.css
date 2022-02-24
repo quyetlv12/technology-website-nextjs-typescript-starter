@@ -1,0 +1,29 @@
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5e61e1;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000;
+}
+
+#nprogress .bar {
+  background: rgb(255, 0, 0);
+}
+#nprogress .spinner-icon {
+  border: solid 2px transparent;
+  border-top-color: rgb(255, 0, 0);
+  border-left-color: rgb(255, 0, 0);
+  border-radius: 50%;
+}

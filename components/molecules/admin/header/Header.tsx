@@ -1,7 +1,12 @@
 const HeaderAdmin = () => {
     return (
-        <div>
-            Enter
+        <div className="flex w-screen bg-indigo-700">
+            <div>
+                hi
+            </div>
+            <div>
+                hi
+            </div>
         </div>
     );
 }
