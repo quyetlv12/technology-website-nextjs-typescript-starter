@@ -18,7 +18,7 @@ const Contact = () => {
           <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
             <div className="lg:w-1/2 px-6">
               <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">
-                ADDRESS
+                Địa chỉ
               </h2>
               <p className="mt-1">
                 Photo booth tattooed prism, portland taiyaki hoodie neutra
@@ -30,25 +30,25 @@ const Contact = () => {
                 EMAIL
               </h2>
               <a className="text-indigo-500 leading-relaxed">
-                example@email.com
+                lequyet840500@gmail.com
               </a>
               <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
                 PHONE
               </h2>
-              <p className="leading-relaxed">123-456-7890</p>
+              <p className="leading-relaxed">0869840500</p>
             </div>
           </div>
         </div>
         <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
           <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">
-            Feedback
+            Phản hồi khách hàng
           </h2>
           <p className="leading-relaxed mb-5 text-gray-600">
-            Post-ironic portland shabby chic echo park, banjo fashion axe
+            vui lòng điền thông tin để gửi phản hồi
           </p>
           <div className="relative mb-4">
             <label htmlFor="name" className="leading-7 text-sm text-gray-600">
-              Name
+              Họ và tên
             </label>
             <input
               type="text"
@@ -59,7 +59,7 @@ const Contact = () => {
           </div>
           <div className="relative mb-4">
             <label htmlFor="email" className="leading-7 text-sm text-gray-600">
-              Email
+              Điạ chỉ email
             </label>
             <input
               type="email"
@@ -73,7 +73,7 @@ const Contact = () => {
               htmlFor="message"
               className="leading-7 text-sm text-gray-600"
             >
-              Message
+              Tin nhắn
             </label>
             <textarea
               id="message"
@@ -83,12 +83,8 @@ const Contact = () => {
             />
           </div>
           <button className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-            Button
+            Gửi phản hồi
           </button>
-          <p className="text-xs text-gray-500 mt-3">
-            Chicharrones blog helvetica normcore iceland tousled brook viral
-            artisan.
-          </p>
         </div>
       </div>
     </section>

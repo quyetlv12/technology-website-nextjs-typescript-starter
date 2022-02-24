@@ -8,8 +8,6 @@ interface SidebarProps {
 }
 const Sidebar: FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen }) => {
   const { pathname } = useRouter();
-  console.log(pathname);
-
   return (
     <aside className="w-80 h-screen bg-gray w-fulll hidden sm:block shadow-lg">
       <div className="flex flex-col justify-between h-screen p-4 bg-indigo-500">

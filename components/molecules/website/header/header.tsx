@@ -1,16 +1,14 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { NAV_WEBSITE } from "../../../../configs";
-import Dropdown from "./Dropdown";
+import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import SidebarMobile from "../sidebarMobile/SidebarMobile";
-import { useState } from "react";
+import Dropdown from "./Dropdown";
 const Header = () => {
   const { pathname } = useRouter();
   const [isOpenSideBar, setIsOpenSideBar] = useState(false);
   const toggle = () => {
     setIsOpenSideBar(!isOpenSideBar);
-    console.log(isOpenSideBar);
     if (!isOpenSideBar) {
       document.body.style.overflow = 'hidden'
     }else{
