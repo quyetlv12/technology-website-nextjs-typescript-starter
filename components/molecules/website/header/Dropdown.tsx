@@ -59,6 +59,20 @@ const Dropdown = () => {
                 )}
               </Menu.Item>
             </div>
+            <div className="px-1 py-1">
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    className={`${
+                      active ? 'bg-indigo-500 text-white' : 'text-gray-900'
+                    } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                    onClick={() => pushRouter('/admin/dashboard')}
+                  >
+                    Quản trị
+                  </button>
+                )}
+              </Menu.Item>
+            </div>
           </Menu.Items>
         </Transition>
       </Menu>

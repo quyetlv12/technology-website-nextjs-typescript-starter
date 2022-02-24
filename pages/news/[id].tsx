@@ -12,7 +12,7 @@ interface Props {
 const DetailPost: FC<Props> = ({ post }) => {
   return (
     <div>
-      <div className="flex flex-wrap -m-3">
+      <div className="flex flex-wrap ">
         <div className="md:w-1/4 w-full p-4">
           <SideBar />
         </div>

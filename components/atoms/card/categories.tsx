@@ -1,6 +1,6 @@
 const CategoriesCard = () => {
   return (
-    <div className="p-2 md:w-40 ">
+    <div className="md:w-40 ">
       <a
         href="#"
         className="flex items-center p-4 bg-blue-200 rounded-lg shadow-xs cursor-pointer hover:bg-blue-500 hover:text-gray-100"
