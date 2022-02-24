@@ -6,7 +6,7 @@ const PostService = {
     getPosts() {
         return httpClient.get(API_POSTS)
     },
-    getPost(id:number){
+    getPost(id:any){
         return httpClient.get(`${API_POSTS}/${id}`)
     }
 

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC } from "react";
-import Button from "../../../atoms/button/button";
 import { AiFillHome } from "react-icons/ai";
 import { BiNews, BiMailSend, BiUser, BiLogIn, BiLogOut } from "react-icons/bi";
 interface SidebarProps {
@@ -81,11 +80,11 @@ const SidebarMobile: FC<SidebarProps> = ({
         </div>
 
         {/* Links */}
-        <div className="flex flex-col">
-          <Link href="/">
+        <div className="flex flex-col text-white">
+          <Link href="/admin">
             <a
               className={`font-bold text-xl pt-3 pb-3 mt-2 border-b-indigo-300 border-[1px] border-t-0 border-l-0 border-r-0 ${
-                router.pathname === "/" ? "bg-indigo-600 rounded-lg p-3" : ""
+                router.pathname === "/admin" ? "bg-indigo-600 rounded-lg p-3" : ""
               } flex items-center gap-1`}
               onClick={toggle}
             >
@@ -93,69 +92,17 @@ const SidebarMobile: FC<SidebarProps> = ({
               <span>Trang chủ</span>
             </a>
           </Link>
-          <Link href="/news">
+          <Link href="/admin/news">
             <a
               className={`font-bold text-xl pt-3 pb-3 mt-2 border-b-indigo-300 border-[1px] border-t-0 border-l-0 border-r-0 ${
-                router.pathname === "/news"
-                  ? "bg-indigo-600 rounded-lg p-3"
-                  : ""
-              } flex gap-1 items-center`}
+                router.pathname === "/admin/news" ? "bg-indigo-600 rounded-lg p-3" : ""
+              } flex items-center gap-1`}
               onClick={toggle}
             >
-              <BiNews />
-              <span>Tin tức</span>
+              <AiFillHome />
+              <span>Bài viết</span>
             </a>
           </Link>
-          <Link href="/about">
-            <a
-              className={`font-bold text-xl pt-3 pb-3 mt-2 border-b-indigo-300 border-[1px] border-t-0 border-l-0 border-r-0 ${
-                router.pathname === "/about"
-                  ? "bg-indigo-600 rounded-lg p-3"
-                  : ""
-              } flex gap-1 items-center`}
-              onClick={toggle}
-            >
-              <BiUser />
-              <span>Về chúng tôi</span>
-            </a>
-          </Link>
-          <Link href="/contact">
-            <a
-              className={`font-bold text-xl pt-3 pb-3 mt-2 border-b-indigo-300 border-[1px] border-t-0 border-l-0 border-r-0 ${
-                router.pathname === "/contact"
-                  ? "bg-indigo-600 rounded-lg p-3"
-                  : ""
-              } flex gap-1 items-center`}
-              onClick={toggle}
-            >
-              <BiMailSend />
-
-              <span>Liên hệ</span>
-            </a>
-          </Link>
-          <Button
-            classname="p-2 bg-red-600 mt-5 rounded-lg hover:bg-indigo-600"
-            title="Đăng nhập"
-            icon={<BiLogIn size={20}/>}
-            onClick={() => redirectRouter("/login")}
-          />
-          <Button
-            classname="p-2 bg-white mt-2 rounded-lg text-indigo-500 hover:bg-indigo-600 hover:text-white transition-all"
-            title="Đăng kí"
-            icon={<BiLogIn size={20}/>}
-            onClick={() => redirectRouter("/signup")}
-          />
-          <Button
-            classname="p-2 bg-red-600 mt-2 rounded-lg text-white hover:bg-indigo-600 hover:text-white transition-all"
-            title="Đăng xuất"
-            icon={<BiLogOut size={20}/>}
-            onClick={() => redirectRouter("/signup")}
-          />
-          <Button
-            classname="p-2 bg-green-500 mt-2 rounded-lg text-white hover:bg-indigo-600 hover:text-white transition-all"
-            title="Quản trị"
-            onClick={() => redirectRouter("/admin/")}
-          />
         </div>
       </div>
     </div>

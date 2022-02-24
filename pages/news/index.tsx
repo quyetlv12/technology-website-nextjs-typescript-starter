@@ -1,6 +1,4 @@
 import { InferGetStaticPropsType } from "next";
-import { useForm } from "react-hook-form";
-import InputCustom from "../../components/atoms/input/InputCustom";
 import PostSection from "../../components/molecules/website/postSection/postSection";
 import SideBar from "../../components/molecules/website/sidebar";
 import PostService from "../../services/post.service";
@@ -14,7 +12,6 @@ export const getStaticProps = async () => {
   };
 };
 const News = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { register } = useForm();
   return (
     <div>
       <div className="flex flex-wrap -m-3">

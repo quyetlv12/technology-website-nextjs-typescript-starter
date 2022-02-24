@@ -11,10 +11,10 @@ const AdminLayout: FC<Props> = ({ children }) => {
   return (
     <div>
       <HeaderAdmin />
-      <main className="flex w-full h-screen">
+      <main className="flex w-full h-screen overflow-hidden">
         <Sidebar />
         <section className="w-full p-4">
-          <div className="w-full h-64 border-dashed border-4 p-4 text-md">
+          <div className="w-full border-dashed border-4 p-4 text-md overflow-scroll h-screen overflow-x-hidden">
             {children}
           </div>
         </section>

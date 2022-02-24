@@ -1,7 +1,5 @@
-import React from 'react'; 
-import { useRouter } from "next/router"
+import moment from 'moment';
 
-const router = useRouter()
 export const checkTypeWindow  = () =>{
     if (typeof window !== undefined) {
       return true        
@@ -9,6 +7,6 @@ export const checkTypeWindow  = () =>{
         return false
     }
 } 
-export const redirectUrl = (link:string) =>{
-  router.push(link)
+export const convertIsoStringToDate = (date:string) =>{
+  return moment(date).format("YYYY-MM-DD")
 }
