@@ -62,14 +62,14 @@ const News = ({ posts }: any) => {
             <td className="px-6 py-4 whitespace-nowrap">
               <div className="flex items-center justify-center">
                 <div className="flex-shrink-0 h-10 w-10">
-                  <Image
+                  {/* <Image
                     width={50}
                     height={50}
                     objectFit="cover"
-                    src={_elt.image}
+                    src={_elt?.image}
                     alt=""
                     className="h-10 w-10 rounded-full"
-                  />
+                  /> */}
                 </div>
               </div>
             </td>

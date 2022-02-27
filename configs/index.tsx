@@ -1,7 +1,14 @@
 import moment from "moment"
 import { TimeInterface } from "../interfaces/utility"
 import { BsNewspaper } from "react-icons/bs";
+export const OK = 200
+export const CREATED = 201
+export const BAD_REQUESR = 400
+export const INTERNAL_SERVER = 500
 export const API_POSTS = '/posts'
+export const API_ADD_POST = '/post'
+export const API_LOGIN_GOOGLE = "/auth/google"
+export const API_USER = "/users"
 export const NAV_WEBSITE = [
     {
         title : "Trang chủ",

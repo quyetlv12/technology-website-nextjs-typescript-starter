@@ -10,7 +10,7 @@ interface CardProps {
 const Card: FC<CardProps> = ({ _post , maxWidth = 3 }) => {
   return (
     <>
-      <div className={`p-4 md:w-1/${maxWidth}`} key={_post.id}>
+      <div className={`p-4 md:w-1/${maxWidth}`} key={_post._id}>
         <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
           <img
             className="lg:h-48 md:h-36 w-full object-cover object-center"
@@ -26,7 +26,7 @@ const Card: FC<CardProps> = ({ _post , maxWidth = 3 }) => {
             </h1>
             <p className="leading-relaxed mb-3">{_post.content}</p>
             <div className="flex items-center flex-wrap ">
-              <Link href={`/news/${_post.id}`}>
+              <Link href={`/news/${_post._id}`}>
                 <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
                   Xem thêm
                   <svg
