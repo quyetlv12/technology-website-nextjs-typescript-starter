@@ -4,8 +4,9 @@ interface Props{
     classname?: string;
     onClick? : any;
     icon? : ReactNode;
+    type?: string | undefined
 } 
-const Button:FC<Props> = ({title = "button" , classname , onClick , icon}) => {    
+const Button:FC<Props> = ({title = "button" , classname , onClick , icon }) => {    
     return (
         <button className={`${classname} flex items-center gap-1 justify-center bg-indigo-500 text-white`} onClick={() => onClick()}>{icon}{title}</button>
     );

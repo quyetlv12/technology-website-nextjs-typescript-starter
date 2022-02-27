@@ -1,12 +1,12 @@
 export interface PostInterface {
-    readonly id : number,
+    readonly _id : number,
     title : string,
-    image : string , 
+    image?: string , 
     content : string,
     author? : string,
     like? : number,
     comment? : [],
-    categoryId : number,
+    categoryId?: number,
     createdDate?: string,
     tag?: string
 }
