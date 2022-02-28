@@ -5,7 +5,7 @@ import authService from "../../services/authService";
 const LoginNetwork = () => {
     const [isLogin, setIsLogin] = useState(false)
     const handleLoginByGoogle = async () =>{
-        window.open("http://localhost:4000/auth/google", "_self")
+        window.open("https://bloggerapi1.herokuapp.com/auth/google", "_self")
     }
     return (
         <div className="flex p-3">
