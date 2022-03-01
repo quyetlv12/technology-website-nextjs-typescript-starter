@@ -7,6 +7,7 @@ import { FaUserCircle } from "react-icons/fa";
 const Dropdown = () => {
   let login_status;
   let user;
+  
   if (typeof window !== "undefined") {
     user = localStorage.getItem("user");
     login_status = localStorage.getItem("login");
