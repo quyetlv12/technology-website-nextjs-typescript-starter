@@ -22,7 +22,6 @@ Router.events.on("routeChangeError", () => {
 function MyApp({ Component, pageProps }: AppProps) {
   const { pathname, events } = useRouter();
   const isAdminPage = pathname.includes("/admin");
-
   return isAdminPage ? (
     <AdminLayout>
       <Component {...pageProps} />

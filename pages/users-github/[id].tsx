@@ -13,6 +13,7 @@ const DetailUser: FC<UserProps> = ({ user }) => {
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem('login', "true")
+    localStorage.setItem('login-method' , 'github')
     Router.push('/')
   }, []);
 
@@ -21,9 +22,7 @@ const DetailUser: FC<UserProps> = ({ user }) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const { id } = params;
-  const { data } = await authService.getInfoUser(id); // your fetch function here
-  console.log(data);
-
+  const { data } = await authService.getInfoUserGithub(id); // your fetch function here
   return {
     props: {
       user: data,
@@ -31,7 +30,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   };
 };
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
-  const { data: users } = await authService.getALlUser(); //fetch api get all products and return props
+  const { data: users } = await authService.getAllUserGithub(); //fetch api get all products and return props
   // create paths
   const paths = users.map((user: any) => {
     return {
