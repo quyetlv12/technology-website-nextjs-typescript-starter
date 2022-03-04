@@ -1,15 +1,19 @@
 // You should use getStaticPaths if you’re statically pre-rendering pages that use dynamic routes
 import { GetStaticPaths } from "next";
 import { FC } from "react";
+import { useSelector } from "react-redux";
 import Comment from "../../components/molecules/website/comment/Comment";
 import SideBar from "../../components/molecules/website/sidebar";
 import { convertISOstringToDate } from "../../configs";
 import { PostInterface } from "../../interfaces/post.interface";
+import { RootState } from "../../redux/store";
 import PostService from "../../services/post.service";
 interface Props {
   post?: PostInterface;
 }
 const DetailPost: FC<Props> = ({ post }) => {
+  const { user, loginStatus } = useSelector((state: RootState) => state?.auth);
+
   return (
     <div>
       <div className="flex flex-wrap ">
@@ -45,7 +49,7 @@ const DetailPost: FC<Props> = ({ post }) => {
               </div>
             </div>
           </main>
-          <Comment/>
+          <Comment />
         </div>
       </div>
     </div>

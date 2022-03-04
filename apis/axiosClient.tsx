@@ -1,7 +1,7 @@
 import axios from 'axios'
-const URL_API = "http://localhost:4000/api"
+const URL_API = process.env.PRODUCTION === 'true' ? "https://bloggerapi1.herokuapp.com/" : "http://localhost:4000/api"
 const httpClient = axios.create({
-    baseURL: URL_API || process.env.URI,
+    baseURL: URL_API,
     headers: {
       "Content-Type": "application/json",
     },

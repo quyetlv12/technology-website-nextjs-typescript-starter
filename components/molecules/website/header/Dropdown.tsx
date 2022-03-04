@@ -1,46 +1,52 @@
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { Fragment } from "react";
 import { FaUserCircle } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  changeLoginStatus,
+  saveInfoAccount,
+} from "../../../../redux/slices/authSlice";
+import { RootState } from "../../../../redux/store";
 const Dropdown = () => {
-  let login_status;
-  let user;
-  if (typeof window !== "undefined") {
-    user = localStorage.getItem("user");
-    login_status = localStorage.getItem("login");
-  }
-  const user_convert = JSON.parse(user || "{}");
+  const { user, loginStatus } = useSelector((state: RootState) => state?.auth);
   const router = useRouter();
-
   const pushRouter = (link: string) => {
     router.push(link);
   };
+  const dispatch = useDispatch();
   const handleLogout = () => {
     localStorage.removeItem("user");
     localStorage.setItem("login", "false");
+    dispatch(saveInfoAccount({}));
+    dispatch(changeLoginStatus(false));
     router.push("/login");
   };
   return (
     <div className="w-56 text-right top-16 hidden lg:block">
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-            {/* {login_status === "true" ? (
+          <Menu.Button className="inline-flex justify-center items-center gap-1 w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+            {loginStatus ? (
               <img
-                src={user_convert?.photos[0]?.value}
+                src={
+                  user?.methodLogin === "google"
+                    ? user?.photos[0]?.value
+                    : user?.avatar_url
+                }
                 alt=""
-                className="w-[30px] h-[30px]"
+                className="w-[30px] h-[30px] rounded-full"
               />
             ) : (
-              <FaUserCircle size={23} />
-            )} */}
-
-            <ChevronDownIcon
-              className="w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100"
-              aria-hidden="true"
-            />
+              <FaUserCircle
+                size={23}
+                className={`${loginStatus ? "hidden" : "block"}`}
+              />
+            )}
+            <span>
+              {user?.methodLogin === "google" ? user?.displayName : user?.login}
+            </span>
           </Menu.Button>
         </div>
         <Transition
@@ -53,7 +59,7 @@ const Dropdown = () => {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
-            {login_status === "true" ? (
+            {loginStatus ? (
               <>
                 <div className="px-1 py-1 ">
                   <Menu.Item>
@@ -103,7 +109,7 @@ const Dropdown = () => {
               </>
             )}
 
-            {user_convert.role === 1 ? (
+            {/* {user_convert.role === 1 ? (
               <div className="px-1 py-1">
                 <Menu.Item>
                   {({ active }) => (
@@ -118,7 +124,7 @@ const Dropdown = () => {
                   )}
                 </Menu.Item>
               </div>
-            ) : null}
+            ) : null} */}
           </Menu.Items>
         </Transition>
       </Menu>
