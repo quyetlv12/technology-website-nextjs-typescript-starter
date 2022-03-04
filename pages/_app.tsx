@@ -24,6 +24,8 @@ Router.events.on("routeChangeError", () => {
 });
 // ==== end loading snipet ====
 function MyApp({ Component, pageProps }: AppProps) {  
+  console.log("env" , process.env.NODE_ENV);
+  
   const { pathname, events } = useRouter();
   const isAdminPage = pathname.includes("/admin");
   return(

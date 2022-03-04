@@ -22,7 +22,7 @@ const Comment = () => {
               Bình luận
             </p>
             <div className="flex gap-3">
-              <img src="" alt="" />
+              {/* <img src="" alt="" /> */}
               <InputCustom placeholder="Nhập bình luận" register={register} />
             </div>
             <div className="mt-6  border" />
