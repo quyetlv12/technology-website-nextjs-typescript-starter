@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 export const checkTypeWindow  = () =>{
-    if (typeof window !== undefined) {
+    if (typeof window !== 'undefined') {
       return true        
     }else{
         return false

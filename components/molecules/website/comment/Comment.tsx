@@ -1,9 +1,12 @@
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../redux/store";
 import InputCustom from "../../../atoms/input/InputCustom";
 import ListComment from "./ListComment";
 
 const Comment = () => {
+  const { user, loginStatus } = useSelector((state: RootState) => state?.auth);
   const { register } = useForm();
   return (
     <div className="bg-grey w-full">
@@ -19,14 +22,7 @@ const Comment = () => {
               Bình luận
             </p>
             <div className="flex gap-3">
-              <Image
-                width={50}
-                height={50}
-                objectFit="cover"
-                src={"https://placeimg.com/640/480/animals"}
-                alt=""
-                className="rounded-full"
-              />
+              <img src="" alt="" />
               <InputCustom placeholder="Nhập bình luận" register={register} />
             </div>
             <div className="mt-6  border" />
