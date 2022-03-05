@@ -23,9 +23,7 @@ Router.events.on("routeChangeError", () => {
 });
 
 // ==== end loading snipet ====
-function MyApp({ Component, pageProps }: AppProps) {
-  // console.log(process.env.CLIENT_ID_GITHUB);
-  
+function MyApp({ Component, pageProps }: AppProps) {  
   const { pathname } = useRouter();
   const isAdminPage = pathname.includes("/admin");
   const options = {

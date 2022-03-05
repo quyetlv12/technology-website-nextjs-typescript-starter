@@ -2,16 +2,16 @@
 import _ from "lodash";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/image";
-import Router, { useRouter } from "next/router";
+import Router from "next/router";
 import { FC, useEffect } from "react";
+import { useAlert } from "react-alert";
 import { useDispatch } from "react-redux";
 import { UserGoogle } from "../../interfaces/userGoogle.interface";
 import {
   changeLoginStatus,
-  saveInfoAccount,
+  saveInfoAccount
 } from "../../redux/slices/authSlice";
 import authService from "../../services/authService";
-import { useAlert } from "react-alert";
 interface UserProps {
   user?: UserGoogle;
 }

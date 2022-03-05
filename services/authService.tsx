@@ -4,7 +4,7 @@ import { API_USER, API_USER_GITHUB } from "../configs";
 
 export const authService = {
    loginByGoogle () {
-       return axios.get(process.env.NODE_ENV === 'production' ? "https://bloggerapi1.herokuapp.com/auth/google" :  "http://localhost:4000/auth/google")
+       return axios.get(`${process.env.API_LOGIN_GOOGLE}`)
    },
    getALlUser(){
        return httpClient.get(API_USER)
