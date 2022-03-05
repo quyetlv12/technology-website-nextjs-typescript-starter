@@ -9,7 +9,7 @@ const LoginNetwork = () => {
     CLIENT_ID = process.env.CLIENT_ID_GITHUB;
   }
   const handleLoginByGoogle = async () => {
-    window.open("http://localhost:4000/auth/google", "_self");
+    window.open(process.env.API_LOGIN_GOOGLE, "_self");
   };
   3;
   const handleLoginByGithub = () => {
