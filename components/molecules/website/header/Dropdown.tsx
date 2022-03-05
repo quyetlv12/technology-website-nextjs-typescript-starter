@@ -9,7 +9,10 @@ import {
   saveInfoAccount,
 } from "../../../../redux/slices/authSlice";
 import { RootState } from "../../../../redux/store";
+import { useAlert } from "react-alert";
+
 const Dropdown = () => {
+  const alert = useAlert()
   const { user, loginStatus } = useSelector((state: RootState) => state?.auth);
   const router = useRouter();
   const pushRouter = (link: string) => {
@@ -21,6 +24,7 @@ const Dropdown = () => {
     localStorage.setItem("login", "false");
     dispatch(saveInfoAccount({}));
     dispatch(changeLoginStatus(false));
+    alert.success("Đăng xuất thành công !")
     router.push("/login");
   };
   return (

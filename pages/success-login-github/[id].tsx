@@ -12,10 +12,13 @@ import authService from "../../services/authService";
 import _ from "lodash";
 import { UserGithub } from "../../interfaces/userGithub.interface";
 import Image from "next/image";
+import { useAlert } from "react-alert";
+
 interface UserProps {
   user?: UserGithub;
 }
 const DetailUser: FC<UserProps> = ({ user }) => {
+  const alert = useAlert()
   const dispatch = useDispatch();
   useEffect(() => {
     const account = _.assign({ methodLogin: "github" }, user);
@@ -24,6 +27,7 @@ const DetailUser: FC<UserProps> = ({ user }) => {
     localStorage.setItem("login-method", "github");
     dispatch(saveInfoAccount(account));
     dispatch(changeLoginStatus(true));
+    alert.success('Đăng nhập thành công !')
     setTimeout(() => {
       Router.push("/");
     }, 3000);

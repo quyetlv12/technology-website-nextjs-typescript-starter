@@ -11,10 +11,12 @@ import {
   saveInfoAccount,
 } from "../../redux/slices/authSlice";
 import authService from "../../services/authService";
+import { useAlert } from "react-alert";
 interface UserProps {
   user?: UserGoogle;
 }
 const DetailUser: FC<UserProps> = ({ user }) => {
+  const alert = useAlert()
   const dispatch = useDispatch();
   useEffect(() => {
     const account = _.assign({ methodLogin: "google" }, user);
@@ -23,6 +25,7 @@ const DetailUser: FC<UserProps> = ({ user }) => {
     localStorage.setItem("login-method", "google");
     dispatch(saveInfoAccount(account));
     dispatch(changeLoginStatus(true));
+    alert.success('Đăng nhập thành công !')
     setTimeout(() => {
       Router.push("/");
     }, 3000);

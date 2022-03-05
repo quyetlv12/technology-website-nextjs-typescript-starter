@@ -10,6 +10,7 @@ export const API_ADD_POST = '/post'
 export const API_LOGIN_GOOGLE = "/auth/google"
 export const API_USER = "/users"
 export const API_USER_GITHUB = "/users-github"
+export const API_MAIL = '/send-mail'
 export const NAV_WEBSITE = [
     {
         title : "Trang chủ",
