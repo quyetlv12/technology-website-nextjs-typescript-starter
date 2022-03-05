@@ -21,8 +21,11 @@ Router.events.on("routeChangeComplete", () => {
 Router.events.on("routeChangeError", () => {
   NProgress.done();
 });
+
 // ==== end loading snipet ====
 function MyApp({ Component, pageProps }: AppProps) {
+  // console.log(process.env.CLIENT_ID_GITHUB);
+  
   const { pathname } = useRouter();
   const isAdminPage = pathname.includes("/admin");
   const options = {

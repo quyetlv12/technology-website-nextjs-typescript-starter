@@ -1,12 +1,15 @@
-import { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
-import authService from "../../services/authService";
 import { FaGithubSquare } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { IDInterface } from "../../interfaces/utility";
+import { checkTypeWindow } from "../../utility";
 
 const LoginNetwork = () => {
-  const CLIENT_ID = "6fac1b9dc1a15aa4a863";
+  let CLIENT_ID: IDInterface;
+  if (checkTypeWindow()) {
+    CLIENT_ID = process.env.CLIENT_ID_GITHUB;
+  }
   const handleLoginByGoogle = async () => {
-    window.open(process.env.NODE_ENV === 'production' ? "https://bloggerapi1.herokuapp.com/auth/google" :  "http://localhost:4000/auth/google"  , "_self");
+    window.open("http://localhost:4000/auth/google", "_self");
   };
   3;
   const handleLoginByGithub = () => {
