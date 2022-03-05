@@ -4,7 +4,6 @@ import authService from "../../services/authService";
 import { FaGithubSquare } from "react-icons/fa";
 
 const LoginNetwork = () => {
-  const [isLogin, setIsLogin] = useState(false);
   const CLIENT_ID = "6fac1b9dc1a15aa4a863";
   const handleLoginByGoogle = async () => {
     window.open(process.env.NODE_ENV === 'production' ? "https://bloggerapi1.herokuapp.com/auth/google" :  "http://localhost:4000/auth/google"  , "_self");
