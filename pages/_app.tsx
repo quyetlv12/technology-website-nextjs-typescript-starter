@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     offset: "20px",
     // you can also just use 'scale'
     transition: transitions.FADE,
-  };
+  };  
   return (
     <Provider store={store}>
       <AlertProvider template={AlertTemplate} {...options}>
