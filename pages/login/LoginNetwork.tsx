@@ -7,6 +7,7 @@ const LoginNetwork = () => {
   let CLIENT_ID: IDInterface;
   if (checkTypeWindow()) {
     CLIENT_ID = process.env.CLIENT_ID_GITHUB;
+    console.log(process.env.API_LOGIN_GOOGLE);
   }
   const handleLoginByGoogle = async () => {
     window.open(process.env.API_LOGIN_GOOGLE, "_self");
