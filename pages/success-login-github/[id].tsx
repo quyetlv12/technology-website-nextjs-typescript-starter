@@ -17,7 +17,7 @@ import { useAlert } from "react-alert";
 interface UserProps {
   user?: UserGithub;
 }
-const DetailUser: FC<UserProps> = ({ user }) => {  
+const DetailUser: FC<UserProps> = ({ user }) => {    
   const alert = useAlert()
   const dispatch = useDispatch();
   useEffect(() => {
