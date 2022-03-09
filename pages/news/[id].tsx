@@ -1,19 +1,21 @@
 // You should use getStaticPaths if you’re statically pre-rendering pages that use dynamic routes
 import { GetStaticPaths } from "next";
-import { FC } from "react";
+import { useRouter } from "next/router";
+import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Comment from "../../components/molecules/website/comment/Comment";
 import SideBar from "../../components/molecules/website/sidebar";
 import { convertISOstringToDate } from "../../configs";
+import { CommentProps } from "../../interfaces/comment.interface";
 import { PostInterface } from "../../interfaces/post.interface";
 import { RootState } from "../../redux/store";
+import { commentService } from "../../services/commentService";
 import PostService from "../../services/post.service";
 interface Props {
   post?: PostInterface;
+  comment?: CommentProps;
 }
-const DetailPost: FC<Props> = ({ post }) => {
-  const { user, loginStatus } = useSelector((state: RootState) => state?.auth);
-
+const DetailPost: FC<Props> = ({ post, comment }) => {
   return (
     <div>
       <div className="flex flex-wrap ">
@@ -49,7 +51,7 @@ const DetailPost: FC<Props> = ({ post }) => {
               </div>
             </div>
           </main>
-          <Comment />
+          <Comment comment={comment} />
         </div>
       </div>
     </div>
@@ -58,9 +60,11 @@ const DetailPost: FC<Props> = ({ post }) => {
 export async function getStaticProps({ params }: any) {
   const { id } = params;
   const { data: post } = await PostService.getPost(id); // get info post
+  const { data: comment } = await commentService.loadAllComment(id);
   return {
     props: {
       post: post,
+      comment: comment,
     },
   };
 }
