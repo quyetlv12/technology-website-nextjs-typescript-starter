@@ -8,10 +8,12 @@ let ReactQuill =
 import { BiArrowBack } from "react-icons/bi";
 import { useRouter } from "next/router";
 import InputCustom from "../../../components/atoms/input/InputCustom";
+import ImgUpload from "../../../components/atoms/imgUpload";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { PostInterface } from "../../../interfaces/post.interface";
 import PostService from "../../../services/post.service";
 import { OK } from "../../../configs";
+import firebase from "../../../firebase";
 const AddPost = () => {
   const router = useRouter();
   const { register, setValue, handleSubmit } = useForm<PostInterface>();
@@ -22,14 +24,23 @@ const AddPost = () => {
   const redirectUrl = (url: string) => {
     router.push(url);
   };
-  const onSubmit: SubmitHandler<PostInterface> =async (data) => {
+  const handleUploadImage = (e: any) => {
+    const file = e.target.files[0];
+    let storeRef = firebase.storage().ref(`blogger/${file.name}`);
+    storeRef.put(file).then((e) => {
+      storeRef.getDownloadURL().then(async (url: any) => {
+        console.log(url);
+      });
+    });
+  };
+  const onSubmit: SubmitHandler<PostInterface> = async (data) => {
     console.log(data);
-    const res = await PostService.AddPost(data)
+    const res = await PostService.AddPost(data);
     if (res.status === OK) {
-      alert("thêm bài viết thành công")
-      router.push('/admim/news')
-    }else{
-      alert("thất bại")
+      alert("thêm bài viết thành công");
+      router.push("/admim/news");
+    } else {
+      alert("thất bại");
     }
   };
   return (
@@ -48,9 +59,18 @@ const AddPost = () => {
         </div>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <InputCustom placeholder="Tiêu đề bài viết" fieldName="title" register={register} />
+        <ImgUpload onChange={handleUploadImage} />
+        <div className="mb-4">
+          <InputCustom
+            placeholder="Tiêu đề bài viết"
+            fieldName="title"
+            register={register}
+          />
+        </div>
         <ReactQuill value={text} onChange={handleChange} />
-        <button className="flex items-center gap-1 justify-center bg-indigo-500 text-white p-2 w-full mt-3 rounded-lg transition-all hover:bg-indigo-700">Thêm bài viết</button>
+        <button className="flex items-center gap-1 justify-center bg-indigo-500 text-white p-2 w-full mt-3 rounded-lg transition-all hover:bg-indigo-700">
+          Thêm bài viết
+        </button>
       </form>
     </div>
   );

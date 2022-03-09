@@ -13,7 +13,7 @@ import { useAlert } from "react-alert";
 
 const Dropdown = () => {
   const alert = useAlert()
-  const { user, loginStatus } = useSelector((state: RootState) => state?.auth);
+  const { user, loginStatus } = useSelector((state: RootState) => state?.auth);  
   const router = useRouter();
   const pushRouter = (link: string) => {
     router.push(link);
@@ -36,7 +36,7 @@ const Dropdown = () => {
               <img
                 src={
                   user?.methodLogin === "google"
-                    ? user?.photos[0]?.value
+                    ? user?.photos[0].value
                     : user?.avatar_url
                 }
                 alt=""
@@ -62,7 +62,24 @@ const Dropdown = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
+          
           <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+          {user?.role === 1 ? (
+              <div className="px-1 py-1">
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      className={`${
+                        active ? "bg-indigo-500 text-white" : "text-gray-900"
+                      } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                      onClick={() => pushRouter("/admin/")}
+                    >
+                      Quản trị
+                    </button>
+                  )}
+                </Menu.Item>
+              </div>
+            ) : null}
             {loginStatus ? (
               <>
                 <div className="px-1 py-1 ">
@@ -96,39 +113,8 @@ const Dropdown = () => {
                     )}
                   </Menu.Item>
                 </div>
-                {/* <div className="px-1 py-1">
-                  <Menu.Item>
-                    {({ active }) => (
-                      <button
-                        className={`${
-                          active ? "bg-indigo-500 text-white" : "text-gray-900"
-                        } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-                        onClick={() => pushRouter("/signup")}
-                      >
-                        Đăng kí
-                      </button>
-                    )}
-                  </Menu.Item>
-                </div> */}
               </>
             )}
-
-            {/* {user_convert.role === 1 ? (
-              <div className="px-1 py-1">
-                <Menu.Item>
-                  {({ active }) => (
-                    <button
-                      className={`${
-                        active ? "bg-indigo-500 text-white" : "text-gray-900"
-                      } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-                      onClick={() => pushRouter("/admin/")}
-                    >
-                      Quản trị
-                    </button>
-                  )}
-                </Menu.Item>
-              </div>
-            ) : null} */}
           </Menu.Items>
         </Transition>
       </Menu>

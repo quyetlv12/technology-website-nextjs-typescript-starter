@@ -116,7 +116,7 @@ const Footer = () => {
             </a>
           </p>
           <span className="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-white text-sm">
-            Enamel pin tousled raclette tacos irony
+            Đây là trang web chạy trên bản thử nghiệm
           </span>
         </div>
       </div>
