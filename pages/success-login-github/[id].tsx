@@ -1,7 +1,7 @@
 // You should use getStaticPaths if you’re statically pre-rendering pages that use dynamic routes
 import { GetStaticPaths, GetStaticProps } from "next";
-import Router from "next/router";
-import { FC, useEffect } from "react";
+import Router, { useRouter } from "next/router";
+import { FC, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { UserGoogle } from "../../interfaces/userGoogle.interface";
 import {
@@ -15,35 +15,34 @@ import Image from "next/image";
 import { useAlert } from "react-alert";
 
 interface UserProps {
-  user?: UserGithub;
+  id?: string;
 }
-const DetailUser: FC<UserProps> = ({ user }) => {    
-  const alert = useAlert()
+const DetailUser: FC<UserProps> = ({id}) => {      
+  const [user, setUser] = useState<UserGithub>()
+  const alert = useAlert();
   const dispatch = useDispatch();
   useEffect(() => {
-    const account = _.assign({ methodLogin: "github" }, user);
-    localStorage.setItem("user", JSON.stringify(account));
-    localStorage.setItem("login", "true");
-    localStorage.setItem("login-method", "github");
-    dispatch(saveInfoAccount(account));
-    dispatch(changeLoginStatus(true));
-    alert.success('Đăng nhập thành công !')
-    setTimeout(() => {
-      Router.push("/");
-    }, 3000);
+    const loadInfoUser = async () =>{
+      const {data : user} =  await authService.getInfoUserGithub(id);
+      setUser(user)
+      const account = _.assign({ methodLogin: "github" }, user);
+      localStorage.setItem("user", JSON.stringify(account));
+      localStorage.setItem("login", "true");
+      localStorage.setItem("login-method", "github");
+      dispatch(saveInfoAccount(account));
+      dispatch(changeLoginStatus(true));
+      alert.success('Đăng nhập thành công !')
+      setTimeout(() => {
+        Router.push("/");
+      }, 3000);
+    }
+    loadInfoUser()
   }, []);
   return (
     <div>
       <div className="flex justify-center">
         <div>
-          <Image
-            width={100}
-            height={100}
-            objectFit="cover"
-            src={user?.avatar_url || ""}
-            alt=""
-            className="rounded-full w-full"
-          />
+         
         </div>
       </div>
       <div className="flex justify-center">
@@ -55,10 +54,9 @@ const DetailUser: FC<UserProps> = ({ user }) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const { id } = params;
-  const { data } = await authService.getInfoUserGithub(id); // your fetch function here
   return {
     props: {
-      user: data,
+      id: id,
     },
   };
 };
