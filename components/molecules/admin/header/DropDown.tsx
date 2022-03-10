@@ -3,7 +3,7 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/router";
 import { Fragment } from "react";
 import { FaUserCircle } from "react-icons/fa";
-const Dropdown = () => {
+const Dropdown = () => {  
     const router = useRouter()
     const pushRouter = (link:string) =>{
         router.push(link)
