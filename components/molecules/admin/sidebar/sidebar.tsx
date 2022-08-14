@@ -13,7 +13,7 @@ const Sidebar: FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen }) => {
       <div className="flex flex-col justify-between h-screen p-4 bg-indigo-500">
         <div className="text-sm">
           <div
-            className={`bg-indigo-700 shadow-sm text-white p-5 rounded cursor-pointer text-center uppercase font-bold text-lg `}
+            className={`bg-green-700 shadow-sm text-white p-5 rounded cursor-pointer text-center uppercase font-bold text-lg `}
           >
             Danh mục quản lý
           </div>

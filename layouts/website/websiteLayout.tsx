@@ -13,6 +13,7 @@ interface Props {
 }
 const WebsiteLayout: FC<Props> = ({ children }) => {
   const dispatch = useDispatch();
+  const router = useRouter()  
   let items;
   if (checkTypeWindow()) {
     if (localStorage.getItem('user') !== null) {
@@ -27,8 +28,8 @@ const WebsiteLayout: FC<Props> = ({ children }) => {
   return (
     <div>
       <Header />
-      <main className="max-w-5xl mx-auto overflow-y-hidden">
-        <div className="flex flex-wrap overflow-hidden">
+      <main className={`${router.pathname === '/' ? null : "max-w-7xl py-5 mx-auto" }  overflow-y-hidden`}>
+        <div className="flex flex-wrap overflow-hidden min-h-screen">
           <div className="w-full">{children}</div>
         </div>
       </main>

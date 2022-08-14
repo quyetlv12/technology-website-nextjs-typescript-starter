@@ -33,16 +33,14 @@ const SidebarMobile: FC<SidebarProps> = ({
       <div
         id="sidebar"
         // ref={sidebar}
-        className={`absolute z-40 left-0 top-0 lg:static lg:left-0 lg:top-0 lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 flex-shrink-0 bg-indigo-500 p-4 transition-transform duration-200 ease-in-out scrollbar scrollbar-thumb-gray-200 scrollbar-track-gray-100 ${
+        className={`absolute z-40 left-0 top-0 lg:static lg:left-0 lg:top-0 lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 flex-shrink-0 bg-green-600 p-4 transition-transform duration-200 ease-in-out scrollbar scrollbar-thumb-gray-200 scrollbar-track-gray-100 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-64"
         }`}
       >
         {/* Sidebar header */}
-        <div className="flex justify-start items-center gap-6 mb-10 pr-3 sm:px-2">
-          {/* Close button */}
-          <button
+        <button
             // ref={trigger}
-            className="lg:hidden text-white hover:text-gray-400"
+            className="lg:hidden text-white h-7 hover:text-gray-400 w-full"
             onClick={() => toggle()}
             aria-controls="sidebar"
             aria-expanded={sidebarOpen}
@@ -56,30 +54,6 @@ const SidebarMobile: FC<SidebarProps> = ({
               <path d="M10.7 18.7l1.4-1.4L7.8 13H20v-2H7.8l4.3-4.3-1.4-1.4L4 12z" />
             </svg>
           </button>
-          <Link href={"/"}>
-            <a
-              className="flex title-font font-medium items-center bg-indigo-700 p-1 pb-2 pr-2 pl-2 rounded-lg text-gray-900 md:mb-0"
-              onClick={toggle}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full mt-2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg>
-              <span className="ml-3 text-md lg:text-xl uppercase mt-2 text-white">
-                MY BLOG
-              </span>
-            </a>
-          </Link>
-        </div>
-
         {/* Links */}
         <div className="flex flex-col">
           <Link href="/">
@@ -133,7 +107,7 @@ const SidebarMobile: FC<SidebarProps> = ({
               <span>Liên hệ</span>
             </a>
           </Link>
-          <Button
+          {/* <Button
             classname="p-2 bg-red-600 mt-5 rounded-lg hover:bg-indigo-600"
             title="Đăng nhập"
             icon={<BiLogIn size={20}/>}
@@ -155,7 +129,7 @@ const SidebarMobile: FC<SidebarProps> = ({
             classname="p-2 bg-green-500 mt-2 rounded-lg text-white hover:bg-indigo-600 hover:text-white transition-all"
             title="Quản trị"
             onClick={() => redirectRouter("/admin/")}
-          />
+          /> */}
         </div>
       </div>
     </div>

@@ -3,8 +3,8 @@ import PostSection from "../../components/molecules/website/postSection/postSect
 import SideBar from "../../components/molecules/website/sidebar";
 import PostService from "../../services/post.service";
 export const getStaticProps = async () => {
-  const res = await PostService.getPosts();
-  const posts = res.data || [];
+  // const res = await PostService.getPosts();
+  const posts = [] || [];
   return {
     props: {
       posts,
@@ -18,11 +18,14 @@ const News = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <div className="md:w-1/4 w-full p-4">
           <SideBar />
         </div>
-        <div className="md:w-3/4 w-full">
+        <div className="md:w-3/4 w-full py-10 px-5">
           <PostSection
             title={"Danh sách bài viết"}
-            posts={posts}
+            // posts={posts}
             maxWidth={2}
+            lg={3}
+            md={3}
+            sm={1}
           />
         </div>
       </div>

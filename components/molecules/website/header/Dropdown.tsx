@@ -108,7 +108,7 @@ const Dropdown = () => {
                         } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                         onClick={() => pushRouter("/login")}
                       >
-                        Đăng nhập
+                        Login
                       </button>
                     )}
                   </Menu.Item>

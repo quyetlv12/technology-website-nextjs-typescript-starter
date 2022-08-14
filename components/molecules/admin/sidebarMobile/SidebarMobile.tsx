@@ -81,7 +81,7 @@ const SidebarMobile: FC<SidebarProps> = ({
 
         {/* Links */}
         <div className="flex flex-col text-white">
-          <Link href="/admin">
+          {/* <Link href="/admin">
             <a
               className={`font-bold text-xl pt-3 pb-3 mt-2 border-b-indigo-300 border-[1px] border-t-0 border-l-0 border-r-0 ${
                 router.pathname === "/admin" ? "bg-indigo-600 rounded-lg p-3" : ""
@@ -91,7 +91,7 @@ const SidebarMobile: FC<SidebarProps> = ({
               <AiFillHome />
               <span>Trang chủ</span>
             </a>
-          </Link>
+          </Link> */}
           <Link href="/admin/news">
             <a
               className={`font-bold text-xl pt-3 pb-3 mt-2 border-b-indigo-300 border-[1px] border-t-0 border-l-0 border-r-0 ${
