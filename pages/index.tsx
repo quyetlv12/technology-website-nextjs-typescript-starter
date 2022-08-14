@@ -7,9 +7,10 @@ import CarouselTop from "../components/molecules/website/carousel";
 import CourseSection from "../components/molecules/website/courseSection";
 import ReviewSection from "../components/molecules/website/reviewSection";
 import StaticSection from "../components/molecules/website/staticSection";
-const Home: NextPage = ({
-  posts,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+// {
+//   posts,
+// }: InferGetStaticPropsType<typeof getStaticProps>
+const Home: NextPage = () => {
   return (
     <div>
       <Head>
@@ -29,13 +30,13 @@ const Home: NextPage = ({
   );
 };
 //fetch api
-export const getStaticProps: GetStaticProps = async () => {
-  // const { data } = await PostService.getPosts(); // your fetch function here
-  return {
-    props: {
-      posts: [],
-    },
-  };
-};
+// export const getStaticProps: GetStaticProps = async () => {
+//   // const { data } = await PostService.getPosts(); // your fetch function here
+//   return {
+//     props: {
+//       posts: [],
+//     },
+//   };
+// };
 
 export default Home;

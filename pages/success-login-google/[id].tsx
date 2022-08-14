@@ -62,28 +62,28 @@ const DetailUser: FC<UserProps> = ({id}) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const { id } = params;
-  return {
-    props: {
-      id: id,
-    },
-  };
-};
-export const getStaticPaths: GetStaticPaths = async (ctx) => {
-  const { data: users } = await authService.getALlUser(); //fetch api get all products and return props
-  // create paths
-  const paths = users.map((user: any) => {
-    return {
-      params: {
-        id: user._id,
-      },
-    };
-  });
-  // ==> return path to params
-  return {
-    paths,
-    fallback: false,
-  };
-};
+// export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+//   const { id } = params;
+//   return {
+//     props: {
+//       id: id,
+//     },
+//   };
+// };
+// export const getStaticPaths: GetStaticPaths = async (ctx) => {
+//   const { data: users } = await authService.getALlUser(); //fetch api get all products and return props
+//   // create paths
+//   const paths = users.map((user: any) => {
+//     return {
+//       params: {
+//         id: user._id,
+//       },
+//     };
+//   });
+//   // ==> return path to params
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
 export default DetailUser;

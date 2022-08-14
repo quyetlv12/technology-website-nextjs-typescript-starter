@@ -2,16 +2,17 @@ import { InferGetStaticPropsType } from "next";
 import PostSection from "../../components/molecules/website/postSection/postSection";
 import SideBar from "../../components/molecules/website/sidebar";
 import PostService from "../../services/post.service";
-export const getStaticProps = async () => {
-  // const res = await PostService.getPosts();
-  const posts = [] || [];
-  return {
-    props: {
-      posts,
-    },
-  };
-};
-const News = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+// export const getStaticProps = async () => {
+//   // const res = await PostService.getPosts();
+//   const posts = [] || [];
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// };
+//{ posts }: InferGetStaticPropsType<typeof getStaticProps>
+const News = () => {
   return (
     <div>
       <div className="flex flex-wrap -m-3">
