@@ -7,10 +7,10 @@ const Title:FC<TitleInterface> = ({title}) => {
   return (
     <div className="flex flex-wrap w-full mb-2 py-4">
       <div className="w-full lg:mb-0">
-        <h1 className="sm:text-[2rem] md:tex[2xl] lg:text-[5xl] font-bold title-font mb-2 text-gray-900">
+        <h1 className="sm:text-[2rem] md:tex[2xl] lg:text-[5xl] font-bold title-font mb-2 text-gray-900 uppercase">
           {title}
         </h1>
-        <div className="h-1 w-20 bg-green-500 rounded" />
+        <div className="h-1 w-20 bg-blue-500 rounded" />
       </div>
     </div>
   );

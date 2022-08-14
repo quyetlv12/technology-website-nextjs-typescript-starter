@@ -29,7 +29,7 @@ const StaticSection:FC<Props> = () => {
                     </div>
                 </div>
                 <div className="lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
-                    <img className="object-cover object-center w-full h-full" src="https://dummyimage.com/600x300" alt="stats" />
+                    <img className="object-cover object-center w-full h-full" src="https://images.pexels.com/photos/21696/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="stats" />
                 </div>
             </div>
         </section>

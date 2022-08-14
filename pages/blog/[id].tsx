@@ -57,34 +57,34 @@ const DetailPost: FC<Props> = ({ post, comment }) => {
     </div>
   );
 };
-// export async function getStaticProps({ params }: any) {
-//   const { id } = params;
-//   const { data: post } = await PostService.getPost(id); // get info post
-//   const { data: comment } = await commentService.loadAllComment(id);
-//   return {
-//     props: {
-//       post: post,
-//       comment: comment,
-//     },
-//   };
-// }
+export async function getStaticProps({ params }: any) {
+  const { id } = params;
+  const { data: post } = await PostService.getPost(id); // get info post
+  const { data: comment } = await commentService.loadAllComment(id);
+  return {
+    props: {
+      post: post,
+      comment: comment,
+    },
+  };
+}
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   // const { data: posts } = await PostService.getPosts(); //fetch api get all products and return props
-//   const posts:any = []
-//   // create paths
-//   const paths = posts.map((post: any) => {
-//     return {
-//       params: {
-//         id: "",
-//       },
-//     };
-//   });
-//   // ==> return path to params
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { data: posts } = await PostService.getPosts(); //fetch api get all products and return props
+
+  // create paths
+  const paths = posts.map((post: any) => {
+    return {
+      params: {
+        id: "",
+      },
+    };
+  });
+  // ==> return path to params
+  return {
+    paths,
+    fallback: false,
+  };
+};
 
 export default DetailPost;

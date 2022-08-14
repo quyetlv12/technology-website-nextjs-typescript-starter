@@ -2,12 +2,17 @@ import React, { FC } from 'react'
 import CardCourse from '../../../atoms/cardCousre'
 import Title from '../../../atoms/title'
 import Button from '../../../atoms/button'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 interface Props {
     name?: string,
     title: string,
-    data?: []
+    data?: [],
+    type?: string
 }
-const CourseSection: FC<Props> = ({ title, data }) => {
+const CourseSection: FC<Props> = ({ title, data, type }) => {
+    const router = useRouter()
+    const isLink = type === 'vietnamese' ? '/vietnamese-lesson' : type === 'english' ? '/vietnamese-lesson' : type === 'talk' ? '/coffee-talk' : "/"
     return (
         <>
             <Title title={title} />
@@ -20,7 +25,12 @@ const CourseSection: FC<Props> = ({ title, data }) => {
                 <CardCourse />
             </div>
             <div className='flex justify-center'>
-            <Button classname='p-3 rounded-md' title='More' />
+                {
+                    router.pathname === '/' ? <Link href={isLink}>
+                        <span className='bg-green-500 text-white p-2 rounded-lg cursor-pointer hover:bg-orange-500'>More</span>
+                    </Link> : null
+                }
+
             </div>
         </>
 

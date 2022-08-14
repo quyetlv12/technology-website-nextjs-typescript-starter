@@ -39,7 +39,7 @@ const Header = () => {
                   className={` ${pathname === "/about"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
-                    } mr-3 px-4 font-bold`}
+                    } mr-3 px-4 font-bold hover:bg-orange-500 rounded-lg p-2 transition-all duration-700`}
                 >
                   <span>ABOUT US</span>
                 </a>
@@ -51,7 +51,7 @@ const Header = () => {
                   className={` ${pathname === "/vietnamese-lesson"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
-                    } mr-3 px-4 font-bold`}
+                    } mr-3 px-4 font-bold hover:bg-orange-500 rounded-lg p-2 transition-all duration-700`}
                 >
                   <span className="">VIETNAMESE LESSON</span>
                 </a>
@@ -63,7 +63,7 @@ const Header = () => {
                   className={` ${pathname === "/english-lesson"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
-                    } mr-3 px-4 font-bold`}
+                    } mr-3 px-4 font-bold hover:bg-orange-500 rounded-lg p-2`}
                 >
                   <span className="">ENGLISH LESSON</span>
                 </a>
@@ -75,7 +75,7 @@ const Header = () => {
                   className={` ${pathname === "/coffee-talk"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
-                    } mr-3 px-4 font-bold`}
+                    } mr-3 px-4 font-bold hover:bg-orange-500 rounded-lg p-2`}
                 >
                   <span className="">CLB COFFEE TALK</span>
                 </a>
@@ -87,7 +87,7 @@ const Header = () => {
                   className={` ${pathname === "/blog"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
-                    } mr-3 px-4 font-bold`}
+                    } mr-3 px-4 font-bold hover:bg-orange-500 rounded-lg p-2`}
                 >
                   <span className="">BLOG</span>
                 </a>
@@ -99,7 +99,7 @@ const Header = () => {
                   className={` ${pathname === "/contact"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
-                    } mr-3 px-4 font-bold`}
+                    } mr-3 px-4 font-bold hover:bg-orange-500 rounded-lg p-2 transition-all duration-700`}
                 >
                   <span className="">CONTACT</span>
                 </a>

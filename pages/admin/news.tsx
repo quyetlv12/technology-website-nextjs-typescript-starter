@@ -9,20 +9,20 @@ import PostService from "../../services/post.service";
 import { convertIsoStringToDate } from "../../utility";
 import { AiFillEdit, AiFillDelete, AiFillPlusCircle } from "react-icons/ai";
 
-// export const getStaticProps = async () => {
-//   const res = await PostService.getPosts();
-//   const data = res.data || [];
-//   if (!data) {
-//     return {
-//       props: true,
-//     };
-//   }
-//   return {
-//     props: {
-//       posts: data,
-//     },
-//   };
-// };
+export const getStaticProps = async () => {
+  const res = await PostService.getPosts();
+  const data = res.data || [];
+  if (!data) {
+    return {
+      props: true,
+    };
+  }
+  return {
+    props: {
+      posts: data,
+    },
+  };
+};
 const News = ({ posts }: any) => {
   const { register } = useForm();
   const router = useRouter()
