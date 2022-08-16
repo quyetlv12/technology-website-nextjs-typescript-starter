@@ -1,6 +1,6 @@
 import axios from 'axios'
 const httpClient = axios.create({
-    baseURL: 'http://localhost:1337/api/',
+    baseURL: 'https://vietlesson-api.herokuapp.com/api/',
     headers: {
       "Content-Type": "application/json",
     },
