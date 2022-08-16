@@ -57,48 +57,7 @@ const News = ({ posts }: any) => {
       </div>
       <Tables
         thProps={field}
-        dataProps={posts.map((_elt: any, index: any) => (
-          <tr key={index}>
-            <td className="px-6 py-4 whitespace-nowrap">
-              <div className="flex items-center justify-center">
-                <div className="flex-shrink-0 h-10 w-10">
-                  {/* <Image
-                    width={50}
-                    height={50}
-                    objectFit="cover"
-                    src={_elt?.image}
-                    alt=""
-                    className="h-10 w-10 rounded-full"
-                  /> */}
-                </div>
-              </div>
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap">
-              <div className="text-sm text-gray-900 text-center">
-                {_elt.title}
-              </div>
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-center">
-              {_elt.content}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
-              {_elt.author}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
-              <a href="#" className="text-indigo-600 hover:text-indigo-900">
-                {convertIsoStringToDate(_elt.createdDate)}
-              </a>
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-center text-sm font-medium flex justify-center items-center gap-3">
-              <button>
-                <AiFillEdit size={20} className="text-green-700 mt-3" />
-              </button>
-              <button>
-                <AiFillDelete size={20} className="text-red-600 mt-3" />
-              </button>
-            </td>
-          </tr>
-        ))}
+        dataProps={''}
       />
     </div>
   );
