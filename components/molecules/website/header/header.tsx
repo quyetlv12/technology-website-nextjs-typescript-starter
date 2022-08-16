@@ -6,6 +6,7 @@ import SidebarMobile from "../sidebarMobile/SidebarMobile";
 import Dropdown from "./Dropdown";
 import Logo from '../../../../assests/images/Vietlesson-color.svg'
 import Image from "next/image";
+import { GREEN_COLOR, ORANGE_COLOR } from "../../../../configs";
 const Header = () => {
   const { pathname } = useRouter();
   const [isOpenSideBar, setIsOpenSideBar] = useState(false);
@@ -18,7 +19,7 @@ const Header = () => {
     }
   };
   return (
-    <header className="text-white body-font bg-green-500">
+    <header className={`text-white body-font bg-[${GREEN_COLOR}]`}>
       <nav className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between relative">
         <button
           className="absolute left-0 ml-3 mt-2 block md:hidden"
@@ -39,7 +40,7 @@ const Header = () => {
                   className={` ${pathname === "/about"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
-                    } mr-3 px-4 font-bold hover:bg-orange-500 rounded-lg p-2 transition-all duration-700`}
+                    } mr-3 px-4 font-bold hover:bg-[${ORANGE_COLOR}] rounded-lg p-2 transition-all duration-700`}
                 >
                   <span>ABOUT US</span>
                 </a>
@@ -51,7 +52,7 @@ const Header = () => {
                   className={` ${pathname === "/vietnamese-lesson"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
-                    } mr-3 px-4 font-bold hover:bg-orange-500 rounded-lg p-2 transition-all duration-700`}
+                    } mr-3 px-4 font-bold hover:bg-[${ORANGE_COLOR}] rounded-lg p-2 transition-all duration-700`}
                 >
                   <span className="">VIETNAMESE LESSON</span>
                 </a>
@@ -63,7 +64,7 @@ const Header = () => {
                   className={` ${pathname === "/english-lesson"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
-                    } mr-3 px-4 font-bold hover:bg-orange-500 rounded-lg p-2`}
+                    } mr-3 px-4 font-bold hover:bg-[${ORANGE_COLOR}] rounded-lg p-2`}
                 >
                   <span className="">ENGLISH LESSON</span>
                 </a>
@@ -75,7 +76,7 @@ const Header = () => {
                   className={` ${pathname === "/coffee-talk"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
-                    } mr-3 px-4 font-bold hover:bg-orange-500 rounded-lg p-2`}
+                    } mr-3 px-4 font-bold hover:bg-[${ORANGE_COLOR}] rounded-lg p-2`}
                 >
                   <span className="">CLB COFFEE TALK</span>
                 </a>
@@ -87,7 +88,7 @@ const Header = () => {
                   className={` ${pathname === "/blog"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
-                    } mr-3 px-4 font-bold hover:bg-orange-500 rounded-lg p-2`}
+                    } mr-3 px-4 font-bold hover:bg-[${ORANGE_COLOR}] rounded-lg p-2`}
                 >
                   <span className="">BLOG</span>
                 </a>
@@ -99,7 +100,7 @@ const Header = () => {
                   className={` ${pathname === "/contact"
                       ? "text-yellow-500 bg-white p-2 rounded-lg"
                       : ""
-                    } mr-3 px-4 font-bold hover:bg-orange-500 rounded-lg p-2 transition-all duration-700`}
+                    } mr-3 px-4 font-bold hover:bg-[${ORANGE_COLOR}] rounded-lg p-2 transition-all duration-700`}
                 >
                   <span className="">CONTACT</span>
                 </a>

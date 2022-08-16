@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userSlice from "./slices/authSlice";
 import commentSlice from "./slices/commentSlice";
+import coursesSlice from "./slices/coursesSlide";
 
 export const store = configureStore({
   reducer: {
     auth: userSlice,
-    app : commentSlice
+    comment : commentSlice,
+    courses : coursesSlice
   },
 });
 

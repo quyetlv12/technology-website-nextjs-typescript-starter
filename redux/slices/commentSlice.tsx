@@ -23,5 +23,5 @@ export const getComment = (state:any) => state.app;
 
 // Reducers and actions
 export const { loadAllComment } = commentSlice.actions;
-export const setComments = (state: RootState) => state.app;
+export const setComments = (state: RootState) => state.comment;
 export default commentSlice.reducer;
