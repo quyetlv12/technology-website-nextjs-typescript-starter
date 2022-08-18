@@ -28,7 +28,7 @@ const WebsiteLayout: FC<Props> = ({ children }) => {
   return (
     <div>
       <Header />
-      <main className={`${router.pathname === '/' ? null : "max-w-7xl py-5 mx-auto" }  overflow-y-hidden`}>
+      <main className={`${router.pathname === '/' ? null : "max-w-[90%] py-5 mx-auto" }  overflow-y-hidden`}>
         <div className="flex flex-wrap overflow-hidden min-h-screen">
           <div className="w-full">{children}</div>
         </div>

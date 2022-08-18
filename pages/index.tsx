@@ -10,11 +10,23 @@ import StaticSection from "../components/molecules/website/staticSection";
 import ContactFormBottom from "../components/molecules/website/contactFormBottom";
 import PostService from "../services/post.service";
 import { courseService } from "../services/cours.service";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { setEnglishLesson, setVietnamesesLesson } from "../redux/slices/coursesSlide";
+import { ThunkDispatch } from "redux-thunk";
+import { ENG, useAppDispatch, VIE } from "../configs";
 const Home: NextPage = ({
   posts, courses
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(courses);
-  
+  const dispatch = useAppDispatch()
+  const vieLesson = courses.filter((_elt:any)=> {
+    return _elt.category.type === VIE
+  })
+  dispatch(setVietnamesesLesson(vieLesson))
+  const engLesson = courses.filter((_elt:any)=> {
+    return _elt.category.type === ENG
+  })
+  dispatch(setEnglishLesson(engLesson))  
   return (
     <div>
       <Head>
@@ -26,8 +38,8 @@ const Home: NextPage = ({
         <div>
           {/* <HeroSection /> */}
           <StaticSection />
-          <CourseSection title={"Vietnamese Lesson"} type={'vietnamese'} courses={courses} />
-          <CourseSection title="English Lesson" type={'english'} courses={courses} />
+          <CourseSection title={"Vietnamese Lesson"} type={'vietnamese'} courses={vieLesson} />
+          <CourseSection title="English Lesson" type={'english'} courses={engLesson} />
           <ContactFormBottom/>
         </div>
       </div>
@@ -36,12 +48,12 @@ const Home: NextPage = ({
 };
 //fetch api
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await PostService.getPosts(); // your fetch function here
-  const { data : course} = await courseService.getCourse()   
+  const { data : posts } = await PostService.getPosts(); 
+  const { data : courses} = await courseService.getCourse()   
   return {
     props: {
-      posts: [],
-      courses : course || []
+      posts: posts,
+      courses : courses
     },
   };
 };

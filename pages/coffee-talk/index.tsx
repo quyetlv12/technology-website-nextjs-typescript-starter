@@ -4,7 +4,7 @@ import CourseSection from '../../components/molecules/website/courseSection'
 const ClbCoffeeTalk = () => {
   return (
     <div>
-      <CourseSection title='' />
+      {/* <CourseSection title='' /> */}
     </div>
   )
 }
