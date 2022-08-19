@@ -6,9 +6,7 @@ import { courseService } from '../../services/cours.service';
 
 const EnglishLesson = ({
    courses
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log("courses" , courses);
-  
+}: InferGetStaticPropsType<typeof getStaticProps>) => {  
   return (
     <div>
         <CourseSection  courses={courses} />

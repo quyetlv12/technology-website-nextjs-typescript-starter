@@ -23,10 +23,10 @@ const CourseSection: FC<Props> = ({ title, type , courses }) => {
             
             <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-10 mb-10">
                 {
-                  courses.map((_elt:CourseProps) => (
-                    <>
+                  courses.map((_elt:CourseProps , key :any) => (
+                    <div key={key}>
                     <CardCourse id={_elt._id} name={_elt.name} image={_elt.avatar.url} price={_elt.price} />
-                    </>
+                    </div>
                    ))
                 }
             </div>

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images :{
-    domains: ['vls-api-mongo.herokuapp.com']
+    domains: ['vls-api.herokuapp.com']
   },
   env: {
     // NODE_ENV: "development",

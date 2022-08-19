@@ -1,23 +1,20 @@
 import type { InferGetStaticPropsType, NextPage } from "next";
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import HeroSection from "../components/molecules/website/heroSection/HeroSection";
 
 import CarouselTop from "../components/molecules/website/carousel";
-import CourseSection from "../components/molecules/website/courseSection";
-import ReviewSection from "../components/molecules/website/reviewSection";
-import StaticSection from "../components/molecules/website/staticSection";
 import ContactFormBottom from "../components/molecules/website/contactFormBottom";
-import PostService from "../services/post.service";
-import { courseService } from "../services/cours.service";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { setEnglishLesson, setVietnamesesLesson } from "../redux/slices/coursesSlide";
-import { ThunkDispatch } from "redux-thunk";
+import CourseSection from "../components/molecules/website/courseSection";
+import StaticSection from "../components/molecules/website/staticSection";
 import { ENG, useAppDispatch, VIE } from "../configs";
+import { setEnglishLesson, setVietnamesesLesson } from "../redux/slices/coursesSlide";
+import { courseService } from "../services/cours.service";
+import PostService from "../services/post.service";
 const Home: NextPage = ({
   posts, courses
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log("courses" , courses);
+  
   const dispatch = useAppDispatch()
   const vieLesson = courses.filter((_elt:any)=> {
     return _elt.category.type === VIE

@@ -5,7 +5,6 @@ interface ListProps {
   arrComment?: any;
 }
 const ListComment: FC<ListProps> = ({ arrComment }) => {
-  console.log("arr", arrComment);
 
   return (
     <div className="flex items-start flex-col justify-start bg-white dark:bg-gray-800">

@@ -28,7 +28,7 @@ export const ORANGE_COLOR = `[#ff9624]`
 export const BLUE_COLOR = `[#00c2ef]`
 export const VIE ='VIE'
 export const ENG = 'ENG'
-export const BASE_API_URL = 'https://vls-api-mongo.herokuapp.com'
+export const BASE_API_URL = 'https://vls-api.herokuapp.com'
 export const NAV_WEBSITE = [
     {
         title : "Trang chủ",
