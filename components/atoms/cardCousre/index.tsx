@@ -9,7 +9,7 @@ interface Props {
     image: String,
     price: String,
 }
-const CardCourse: FC<Props> = ({id , name, image, price }) => {
+const CardCourse: FC<Props> = ({id , name, image, price }) => {    
     return (
         <>
             <div 
