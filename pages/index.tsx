@@ -13,7 +13,6 @@ import PostService from "../services/post.service";
 const Home: NextPage = ({
   posts, courses
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log("courses" , courses);
   
   const dispatch = useAppDispatch()
   const vieLesson = courses.filter((_elt:any)=> {

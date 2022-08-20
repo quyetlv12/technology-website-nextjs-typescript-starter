@@ -25,7 +25,7 @@ const CourseSection: FC<Props> = ({ title, type , courses }) => {
                 {
                   courses.map((_elt:CourseProps , key :any) => (
                     <div key={key}>
-                    <CardCourse id={_elt._id} name={_elt.name} image={_elt.avatar.url} price={_elt.price} />
+                    <CardCourse id={_elt._id} name={_elt.title} image={_elt.avatar.url} price={_elt.price} />
                     </div>
                    ))
                 }

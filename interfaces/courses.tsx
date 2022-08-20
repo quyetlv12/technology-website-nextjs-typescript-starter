@@ -1,6 +1,7 @@
 export interface CourseProps {
     "_id": String,
     "name": String,
+    "title" : String ,
     "price": String,
     "startDate": String,
     "content": String,
