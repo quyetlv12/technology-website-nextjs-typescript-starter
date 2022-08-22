@@ -9,7 +9,7 @@ interface Props {
     titleVie ? : String,
     schedules: []
 }
-const Schedule: FC<Props> = ({ schedules ,title  , titleVie }) => {    
+const Schedule: FC<Props> = ({ schedules ,title , titleVie }) => {    
     return (
         <div>
             <Title title={title} titleVie={titleVie} />
