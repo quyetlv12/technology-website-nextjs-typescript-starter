@@ -2,12 +2,14 @@ import { Action, applyMiddleware, configureStore , ThunkAction } from "@reduxjs/
 import userSlice from "./slices/authSlice";
 import commentSlice from "./slices/commentSlice";
 import coursesSlice from "./slices/coursesSlide";
+import  scheduleSlice from './slices/schedule';
 
 export const store = configureStore({
   reducer: {
     auth: userSlice,
     comment : commentSlice,
-    coursesState : coursesSlice
+    coursesState : coursesSlice,
+    schedulesState : scheduleSlice
   },
 });
 
