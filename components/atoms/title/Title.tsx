@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 interface TitleInterface {
-    title ?: string ,
-    titleVie ?: string
+    title ?: String ,
+    titleVie ?: String
 }
 const Title:FC<TitleInterface> = ({title , titleVie}) => {
   return (
