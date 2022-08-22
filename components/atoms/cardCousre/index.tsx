@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import Image from 'next/image'
-import { BASE_API_URL } from '../../../configs'
+import { BASE_API_URL, convertStringToCurreny } from '../../../configs'
 import Link from 'next/link'
 interface Props {
     id : String,
@@ -10,15 +10,13 @@ interface Props {
     price: String,
 }
 const CardCourse: FC<Props> = ({id , name, image, price }) => {    
-    console.log("name",  name);
-    
     return (
         <>
             <div 
-                className="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                className="w-full max-w-sm bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
              <div className='flex justify-center mt-2'>
              <a href="#">
-                    <img src={`${BASE_API_URL}${image}`} className="p-8 hover:rounded-t-lg rounded-t-lg hover:scale-110 transition-all bg-cover"/>
+                    <img src={`${image}`} className="p-8 hover:rounded-t-lg rounded-t-lg hover:scale-110 transition-all bg-cover h-[240px]"/>
                 </a>
              </div>
                 <div className="px-5 pb-5">
@@ -35,8 +33,8 @@ const CardCourse: FC<Props> = ({id , name, image, price }) => {
                     </div>
                     <Link href="/">
                     <div className="flex justify-between items-center">
-                        <span className="text-1xl font-bold text-gray-900 dark:text-white">${price}</span>
-                        <a href="#" className="text-white bg-blue-700 hover:bg-[#ff9624] transition-all focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-[#ff9624] dark:focus:ring-blue-800">Buy Now !</a>
+                        <span className="text-1xl font-bold text-gray-900 dark:text-white">{convertStringToCurreny(price)} VNĐ</span>
+                        <a href="#" className="text-white bg-blue-700 hover:bg-[#ff9624] transition-all focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-[#ff9624] dark:focus:ring-blue-800">Buy Now !</a>
                     </div>
 
                     </Link>

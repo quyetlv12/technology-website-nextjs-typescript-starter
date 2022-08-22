@@ -10,9 +10,12 @@ import { ENG, useAppDispatch, VIE } from "../configs";
 import { setEnglishLesson, setVietnamesesLesson } from "../redux/slices/coursesSlide";
 import { courseService } from "../services/cours.service";
 import PostService from "../services/post.service";
+import Schedule from './../components/molecules/website/schedule/index';
+import { scheduleService } from './../services/schedule.service';
 const Home: NextPage = ({
-  posts, courses
+  posts, courses , schedules
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log("schedules" , schedules);
   
   const dispatch = useAppDispatch()
   const vieLesson = courses.filter((_elt:any)=> {
@@ -34,8 +37,9 @@ const Home: NextPage = ({
         <div>
           {/* <HeroSection /> */}
           <StaticSection />
-          <CourseSection title={"Vietnamese Lesson"} type={'vietnamese'} courses={vieLesson} />
-          <CourseSection title="English Lesson" type={'english'} courses={engLesson} />
+          <CourseSection title={"Vietnamese Lesson"} titleVie={'Khoá học tiếng việt'} type={'vietnamese'} courses={vieLesson} />
+          <CourseSection title="English Lesson" type={'english'} courses={engLesson}  titleVie={'Khoá học tiếng việt'} />
+          <Schedule schedules={schedules}/>
           <ContactFormBottom/>
         </div>
       </div>
@@ -46,10 +50,12 @@ const Home: NextPage = ({
 export const getStaticProps: GetStaticProps = async () => {
   const { data : posts } = await PostService.getPosts(); 
   const { data : courses} = await courseService.getCourse()   
+  const { data : schedules} = await scheduleService.getAllSchedules()   
   return {
     props: {
       posts: posts,
-      courses : courses
+      courses : courses,
+      schedules :  schedules
     },
   };
 };

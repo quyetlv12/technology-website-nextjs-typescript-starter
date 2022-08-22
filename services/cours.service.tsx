@@ -9,5 +9,8 @@ export const courseService = {
    getCoursesByCategory(_start = 0 , _limit = 9 , _category = VIE){
     return httpClient.get(`${API_COURSES}?_start=
     ${_start}&_limit=${_limit}&category.type=${_category}`)
+   },
+   getCourseByIds(id:String){
+    return httpClient.get(`${API_COURSES}/${id}`)
    }
 }
