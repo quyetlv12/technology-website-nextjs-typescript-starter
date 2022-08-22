@@ -5,16 +5,14 @@ import Button from '../../../atoms/button'
 import Title from '../../../atoms/title/Title'
 import { ScheduleProps } from './../../../../interfaces/schedule.interface';
 interface Props {
+    title ?: String, 
+    titleVie ? : String,
     schedules: []
 }
-const Schedule: FC<Props> = ({ schedules }) => {    
+const Schedule: FC<Props> = ({ schedules ,title  , titleVie }) => {    
     return (
         <div>
-            <Title title="Schedule" titleVie='Lịch khai giảng' />
-            <select id="countries" className="bg-gray-50 border mb-3 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option selected className='px-10' value={VIE}>Tiếng việt</option>
-                <option value={ENG} className='px-10'>Tiếng anh</option>
-            </select>
+            <Title title={title} titleVie={titleVie} />
             <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
@@ -71,9 +69,9 @@ const Schedule: FC<Props> = ({ schedules }) => {
                                 </tr>
                             ))
                         }
-
                     </tbody>
                 </table>
+                
             </div>
 
         </div>

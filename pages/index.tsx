@@ -52,7 +52,8 @@ const Home: NextPage = () => {
           <StaticSection />
           <CourseSection title={"Vietnamese Lesson"} titleVie={'Khoá học tiếng việt'} type={'vietnamese'} courses={vieLesson} />
           <CourseSection title="English Lesson" type={'english'} courses={engLesson} titleVie={'Khoá học tiếng việt'} />
-          <Schedule schedules={schdules} />
+          <Schedule schedules={schdules} title="Schedule Vietnamese Class" titleVie={"Lịch khai giảng lớp tiếng việt"} />
+          <Schedule schedules={schdules} title="Schedule English Class" titleVie={"Lịch khai giảng lớp tiếng anh"} />
           <ContactFormBottom />
         </div>
       </div>
