@@ -19,6 +19,8 @@ const Home: NextPage = () => {
   const vieLesson = useAppSelector(getVietnamesCourses)
   const engLesson = useAppSelector(getEnglishCourses)
   const schdules = useAppSelector(getSchedules)
+  console.log(schdules);
+  
   useEffect(() => {
     const getData = async () => {
       const { data: posts } = await PostService.getPosts();
