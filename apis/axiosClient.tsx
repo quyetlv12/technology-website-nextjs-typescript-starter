@@ -1,6 +1,6 @@
 import axios from 'axios'
 const httpClient = axios.create({
-    baseURL: 'https://vls-api.herokuapp.com/',
+    baseURL: 'http://localhost:1337/',
     headers: {
       "Content-Type": "application/json",
     },

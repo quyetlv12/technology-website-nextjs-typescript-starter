@@ -5,6 +5,7 @@ export interface CourseProps {
     "price": String,
     "startDate": String,
     "content": String,
+    "image" : String,
     "avatar": {
         "_id": String,
         "url": String,

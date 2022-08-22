@@ -10,22 +10,23 @@ interface Props {
     name?: string,
     title?: string,
     courses: [],
-    type?: string
+    type?: string,
+    titleVie?: string
 }
-const CourseSection: FC<Props> = ({ title, type , courses }) => {  
+const CourseSection: FC<Props> = ({ title, type , courses , titleVie }) => {  
     const router = useRouter()
     const isLink = type === 'vietnamese' ? '/vietnamese-lesson' : type === 'english' ? '/vietnamese-lesson' : type === 'talk' ? '/coffee-talk' : "/"
     return (
         <>
         {
-            title ?<Title title={title} /> : null
+            title ?<Title title={title}  titleVie={titleVie} /> : null
         }
             
             <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-10 mb-10">
                 {
                   courses.map((_elt:CourseProps , key :any) => (
                     <div key={key}>
-                    <CardCourse id={_elt._id} name={_elt.title} image={_elt.avatar.url} price={_elt.price} />
+                    <CardCourse id={_elt._id} name={_elt.title} image={_elt.image} price={_elt.price}/>
                     </div>
                    ))
                 }
