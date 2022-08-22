@@ -11,9 +11,9 @@ interface Props {
 }
 const Schedule: FC<Props> = ({ schedules ,title , titleVie }) => {    
     return (
-        <div>
+        <div className='mt-4'>
             <Title title={title} titleVie={titleVie} />
-            <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
+            <div className="overflow-x-auto mt-2 relative shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
                         <tr>
