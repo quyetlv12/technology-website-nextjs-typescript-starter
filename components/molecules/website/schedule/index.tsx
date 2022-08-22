@@ -7,14 +7,7 @@ import { ScheduleProps } from './../../../../interfaces/schedule.interface';
 interface Props {
     schedules: []
 }
-const Schedule: FC<Props> = ({ schedules }) => {
-    console.log(schedules);
-    
-    const [SchedulesArr, setSchedulesArr] = useState([])
-    useEffect(() => {
-        setSchedulesArr(schedules)
-    }, [])
-    
+const Schedule: FC<Props> = ({ schedules }) => {    
     return (
         <div>
             <Title title="Schedule" titleVie='Lịch khai giảng' />
@@ -51,7 +44,7 @@ const Schedule: FC<Props> = ({ schedules }) => {
                     </thead>
                     <tbody>
                         {
-                            SchedulesArr.map((_elt: ScheduleProps, index: any) => (
+                            schedules.map((_elt: ScheduleProps, index: any) => (
                                 <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-green-500 cursor-pointer" key={index}>
                                     <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
                                         {_elt.name}
