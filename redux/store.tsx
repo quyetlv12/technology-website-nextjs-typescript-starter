@@ -3,13 +3,15 @@ import userSlice from "./slices/authSlice";
 import commentSlice from "./slices/commentSlice";
 import coursesSlice from "./slices/coursesSlide";
 import  scheduleSlice from './slices/schedule';
+import appConfigSlice from './slices/appSlice';
 
 export const store = configureStore({
   reducer: {
     auth: userSlice,
     comment : commentSlice,
     coursesState : coursesSlice,
-    schedulesState : scheduleSlice
+    schedulesState : scheduleSlice,
+    appConfig : appConfigSlice
   },
 });
 
