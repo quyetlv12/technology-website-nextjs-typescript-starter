@@ -20,15 +20,15 @@ const Home: NextPage = () => {
   const engLesson = useAppSelector(getEnglishCourses)
   const schdules = useAppSelector(getSchedules)
   console.log(schdules);
-  
+
   useEffect(() => {
     const getData = async () => {
       const { data: posts } = await PostService.getPosts();
       const { data: courses } = await courseService.getCourse()
       const { data: schedules } = await scheduleService.getAllSchedules()
-       const vieLesson = courses.filter((_elt: any) => {
+      const vieLesson = courses.filter((_elt: any) => {
         return _elt.category.type === VIE
-      })      
+      })
       dispatch(setVietnamesesLesson(vieLesson))
       const engLesson = courses.filter((_elt: any) => {
         return _elt.category.type === ENG
@@ -53,8 +53,13 @@ const Home: NextPage = () => {
           <CourseSection title={"Vietnamese Lesson"} titleVie={'Khoá học tiếng việt'} type={'vietnamese'} courses={vieLesson} />
           <CourseSection title="English Lesson" type={'english'} courses={engLesson} titleVie={'Khoá học tiếng việt'} />
           <Schedule schedules={schdules} title="Schedule Vietnamese Class" titleVie={"Lịch khai giảng lớp tiếng việt"} />
+          {/* <ContactFormBottom /> */}
           <Schedule schedules={schdules} title="Schedule English Class" titleVie={"Lịch khai giảng lớp tiếng anh"} />
-          <ContactFormBottom />
+          <div className="grid grid-cols-2">
+            <ContactFormBottom title={"Đăng kí khoá học tiếng anh"} />
+            <ContactFormBottom title={"Đăng kí khoá học tiếng việt"} />
+          </div>
+
         </div>
       </div>
     </div>
