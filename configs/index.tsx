@@ -63,3 +63,5 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const convertStringToCurreny = (string:String) => {
    return  string.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
 }
+export const scheduleVieHeaderList = ["Tên khoá học" , "Ngày bắt đầu" , "Lịch học" , "Học phí" , "Giảng viên"]
+export const scheduleEngHeaderList =  ["Course name" , "Start date" , "Schedule study" , "Tuition fee" , "Teacher"]
