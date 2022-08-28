@@ -2,16 +2,17 @@ import React, { FC } from 'react'
 import Title from '../../../atoms/title'
 interface Props {
     name?: string,
-    title?: String
+    title?: String,
+    titleVie?:String
 }
-const ContactFormBottom: FC<Props> = ({title}) => {
+const ContactFormBottom: FC<Props> = ({title , titleVie}) => {
     return (
         <section className="text-gray-600 body-font relative">
             <div className="container py-24 mx-auto">
                 <div className="flex flex-col text-center w-full mb-1">
-                    <Title title="Register for a course" titleVie={title} />
+                    <Title title={title} titleVie={titleVie} />
                 </div>
-                <div className="lg:w-1/2 md:w-2/3 mx-auto">
+                <div className="lg:w-2/2 md:w-2/3 mx-auto">
                     <div className="flex flex-wrap -m-2">
                         <div className="p-2 w-1/2">
                             <div className="relative">
