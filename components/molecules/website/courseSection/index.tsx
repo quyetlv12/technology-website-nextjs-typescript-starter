@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
-import { useAppSelector } from '../../../../configs'
+import { checkTypeReturnLink, useAppSelector } from '../../../../configs'
 import { CourseProps } from '../../../../interfaces/courses'
 import { getCourses, getEnglishCourses, getVietnamesCourses } from '../../../../redux/slices/coursesSlide'
 import CardCourse from '../../../atoms/cardCousre'
@@ -13,9 +13,8 @@ interface Props {
     type?: string,
     titleVie?: string
 }
-const CourseSection: FC<Props> = ({ title, type , courses , titleVie }) => {  
+const CourseSection: FC<Props> = ({ title, type , courses , titleVie }) => {      
     const router = useRouter()
-    const isLink = type === 'vietnamese' ? '/vietnamese-lesson' : type === 'english' ? '/vietnamese-lesson' : type === 'talk' ? '/coffee-talk' : "/"
     return (
         <>
         {
@@ -26,14 +25,14 @@ const CourseSection: FC<Props> = ({ title, type , courses , titleVie }) => {
                 {
                   courses.map((_elt:CourseProps , key :any) => (
                     <div key={key}>
-                    <CardCourse id={_elt._id} name={_elt.title} image={_elt.image} price={_elt.price}/>
+                    <CardCourse type={type} id={_elt._id} name={_elt.title} image={_elt.image} price={_elt.price}/>
                     </div>
                    ))
                 }
             </div>
             <div className='flex justify-center'>
                 {
-                    router.pathname === '/' ? <Link href={isLink}>
+                    router.pathname === '/' ? <Link href={checkTypeReturnLink(type)}>
                         <span className='bg-green-500 text-white p-2 rounded-lg cursor-pointer hover:bg-orange-500'>More</span>
                     </Link> : null
                 }

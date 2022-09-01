@@ -1,11 +1,13 @@
 import React, { FC } from 'react'
 import Title from '../../../atoms/title'
+import Select from 'react-select'
 interface Props {
     name?: string,
     title?: String,
-    titleVie?:String
+    titleVie?: String,
+    opts?: []
 }
-const ContactFormBottom: FC<Props> = ({title , titleVie}) => {
+const ContactFormBottom: FC<Props> = ({ title, titleVie , opts = [] }) => {
     return (
         <section className="text-gray-600 body-font relative">
             <div className="container py-24 mx-auto">
@@ -27,14 +29,11 @@ const ContactFormBottom: FC<Props> = ({title , titleVie}) => {
                             </div>
                         </div>
                         <div className="p-2 w-full">
-                            <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 w-full dark:text-gray-400">Select course</label>
-                            <select id="countries" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected>Choose a country</option>
-                                <option value="US">United States</option>
-                                <option value="CA">Canada</option>
-                                <option value="FR">France</option>
-                                <option value="DE">Germany</option>
-                            </select>
+                            <label htmlFor="email" className="leading-7 text-sm text-gray-600">Khoá học</label>
+                            <Select options={opts} placeholder={'Chọn khoá học'} onChange={(e) => {
+                                console.log(e);
+                                
+                            }} />
                         </div>
                         <div className="p-2 w-full">
                             <div className="relative">

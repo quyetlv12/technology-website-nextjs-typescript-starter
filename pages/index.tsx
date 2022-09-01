@@ -7,37 +7,78 @@ import CarouselTop from "../components/molecules/website/carousel";
 import ContactFormBottom from "../components/molecules/website/contactFormBottom";
 import CourseSection from "../components/molecules/website/courseSection";
 import StaticSection from "../components/molecules/website/staticSection";
-import { ENG, scheduleEngHeaderList, useAppDispatch, useAppSelector, VIE } from "../configs";
+import {_LIMIT_START_DOC_SCHEDULE, ENG, scheduleEngHeaderList, useAppDispatch, useAppSelector, VIE} from "../configs";
 import { getEnglishCourses, getVietnamesCourses, setEnglishLesson, setVietnamesesLesson } from "../redux/slices/coursesSlide";
-import { getSchedules, setSchedule } from "../redux/slices/schedule";
+import {
+  getEngSchedule,
+  getEngStartDoc,
+  getVieStartDoc,
+  setEnglishSchedule,
+  setSchedule,
+  setVietnamesesSchedule,
+  updateVietnamesesStartDoc,
+  updateEnglishStartDoc
+} from "../redux/slices/schedule";
 import { courseService } from "../services/cours.service";
 import PostService from "../services/post.service";
 import Schedule from './../components/molecules/website/schedule/index';
-import { scheduleService } from './../services/schedule.service';
+import { scheduleService } from '../services/schedule.service';
 import Pagination from './../components/molecules/website/pagination/Pagination';
-import { scheduleVieHeaderList } from './../configs/index';
+import { scheduleVieHeaderList } from '../configs';
+import { getVieSchedule } from '../redux/slices/schedule';
 const Home: NextPage = () => {
   const dispatch = useAppDispatch()
   const vieLesson = useAppSelector(getVietnamesCourses)
   const engLesson = useAppSelector(getEnglishCourses)
-  const schdules = useAppSelector(getSchedules)
-  const getPaginationSchedule = (type: String) => {
-    console.log("type", type);
-
+  const vieSchedule = useAppSelector(getVieSchedule)
+  const engSchedule = useAppSelector(getEngSchedule)
+  const vieDoc = useAppSelector(getVieStartDoc)
+  const engDoc = useAppSelector(getEngStartDoc)
+  const handleNextPage = async (type:any) => {
+    console.log("type" , type)
+    if(type === VIE){
+      const start = Number(vieDoc + _LIMIT_START_DOC_SCHEDULE)
+      const res = await scheduleService.getScheduleByCate(start , _LIMIT_START_DOC_SCHEDULE ,VIE)
+      dispatch(setVietnamesesSchedule(res.data))
+      dispatch(updateVietnamesesStartDoc(start))
+    }else {
+      const start = Number(engDoc + _LIMIT_START_DOC_SCHEDULE)
+      const res = await scheduleService.getScheduleByCate(start , _LIMIT_START_DOC_SCHEDULE ,ENG)
+      dispatch(setEnglishSchedule(res.data))
+      dispatch(updateEnglishStartDoc(start))
+    }
+  }
+  const handlePrevPage = async (type:any) => {
+    console.log("type" , type)
+    if(type === VIE){
+      const start = Number(vieDoc - _LIMIT_START_DOC_SCHEDULE)
+      console.log("start" , start)
+      const res = await scheduleService.getScheduleByCate(start , _LIMIT_START_DOC_SCHEDULE ,VIE)
+      dispatch(setVietnamesesSchedule(res.data))
+      dispatch(updateVietnamesesStartDoc(start))
+    }else {
+      const start = Number(engDoc - _LIMIT_START_DOC_SCHEDULE)
+      const res = await scheduleService.getScheduleByCate(start , _LIMIT_START_DOC_SCHEDULE , ENG)
+      dispatch(setEnglishSchedule(res.data))
+      dispatch(updateEnglishStartDoc(start))
+    }
   }
   useEffect(() => {
     const getData = async () => {
-      const { data: posts } = await PostService.getPosts();
       const { data: courses } = await courseService.getCourse()
+      const { data: vieSchedule } = await scheduleService.getScheduleByCate(vieDoc, _LIMIT_START_DOC_SCHEDULE, VIE)
+      const { data: engSchedule } = await scheduleService.getScheduleByCate(engDoc, _LIMIT_START_DOC_SCHEDULE, ENG)
       const { data: schedules } = await scheduleService.getAllSchedules()
       const vieLesson = courses.filter((_elt: any) => {
         return _elt.category.type === VIE
       })
       dispatch(setVietnamesesLesson(vieLesson))
+      dispatch(setVietnamesesSchedule(vieSchedule))
       const engLesson = courses.filter((_elt: any) => {
         return _elt.category.type === ENG
       })
       dispatch(setEnglishLesson(engLesson))
+      dispatch(setEnglishSchedule(engSchedule))
       dispatch(setSchedule(schedules))
     }
     getData()
@@ -66,20 +107,20 @@ const Home: NextPage = () => {
           {/* SCHEUDLE SECTION */}
 
 
-          <Schedule type={VIE} schedules={schdules} title="Schedule Vietnamese Class" titleVie={"Lịch khai giảng lớp tiếng việt"} headerList={scheduleVieHeaderList} />
+          <Schedule type={VIE} schedules={vieSchedule} title="Schedule Vietnamese Class" titleVie={"Lịch khai giảng lớp tiếng việt"} headerList={scheduleVieHeaderList} />
 
           {/* PAGINATION SECTION */}
 
-          <Pagination />
+          <Pagination type={VIE} nextFunc={handleNextPage} prevFunc={handlePrevPage} startDoc={vieDoc} />
 
 
-          {/* SCHEDULE SCTION */}
+          {/* SCHEDULE SECTION */}
 
-          <Schedule type={ENG} schedules={schdules} title="Schedule English Class" titleVie={"Lịch khai giảng lớp tiếng anh"} headerList={scheduleEngHeaderList} />
+          <Schedule type={ENG} schedules={engSchedule} title="Schedule English Class" titleVie={"Lịch khai giảng lớp tiếng anh"} headerList={scheduleEngHeaderList} />
 
           {/* PAGINATION SECTION */}
 
-          <Pagination />
+          <Pagination type={ENG} nextFunc={handleNextPage} prevFunc={handlePrevPage} startDoc={engDoc}  />
 
 
           {/* FORM SECTION */}

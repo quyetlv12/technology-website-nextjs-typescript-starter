@@ -65,3 +65,8 @@ export const convertStringToCurreny = (string:String) => {
 }
 export const scheduleVieHeaderList = ["Tên khoá học" , "Ngày bắt đầu" , "Lịch học" , "Học phí" , "Giảng viên"]
 export const scheduleEngHeaderList =  ["Course name" , "Start date" , "Schedule study" , "Tuition fee" , "Teacher"]
+export const checkTypeReturnLink = (type:any) =>{
+    return type === 'vietnamese' ? '/vietnamese-lesson' : type === 'english' ? '/english-lesson' : type === 'talk' ? '/coffee-talk' : "/"
+}
+export const _LIMIT_START_DOC = 9
+export const _LIMIT_START_DOC_SCHEDULE = 5

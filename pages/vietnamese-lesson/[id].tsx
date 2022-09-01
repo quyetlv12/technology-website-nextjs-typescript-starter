@@ -4,8 +4,7 @@ import { courseService } from '../../services/cours.service';
 interface Props {
     course : any
 }
-const EnlishLesson:FC<Props> = ({course}) => {
-    console.log("course",course);    
+const VietnameseLesson:FC<Props> = ({course}) => {
   return (
     <div>{course.title}</div>
   )
@@ -38,4 +37,4 @@ export async function getStaticProps({ params }: any) {
   };
   
 
-export default EnlishLesson
+export default VietnameseLesson
