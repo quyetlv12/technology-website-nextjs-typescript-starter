@@ -9,7 +9,7 @@ const EnglishLesson = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {  
   return (
     <div>
-        <CourseSection  courses={courses} />
+        <CourseSection  courses={courses} type={'english'} />
     </div>
   )
 }

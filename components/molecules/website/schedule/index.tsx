@@ -29,34 +29,12 @@ const Schedule: FC<Props> = ({ type, schedules, title, titleVie, headerList }) =
                                 ))
                             }
                             <th scope="col" className="py-3 bg-green-500 text-white  px-6">
-
                             </th>
-                            {/* <th scope="col" className="py-6 px-6 bg-green-500 text-center text-white dark:bg-gray-800">
-                                Tên khoá học
-                            </th>
-                            <th scope="col" className="py-6 bg-green-500 text-white  px-6">
-                                Ngày bắt đầu
-                            </th>
-                            <th scope="col" className="py-6 px-6 bg-green-500 text-center text-white dark:bg-gray-800">
-                                Lịch học
-                            </th>
-                            <th scope="col" className="py-6 bg-green-500 text-white text-center px-6">
-                                Thời gian khoá học
-                            </th>
-                            <th scope="col" className="py-3 bg-green-500 text-white text-center px-6">
-                                Học phí
-                            </th>
-                            <th scope="col" className="py-3 bg-green-500 text-white text-center px-6">
-                                Giảng viên
-                            </th>
-                            <th scope="col" className="py-3 bg-green-500 text-white  px-6">
-
-                            </th> */}
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            schedules.map((_elt: ScheduleProps, index: any) => (
+                            schedules && schedules.map((_elt: ScheduleProps, index: any) => (
                                 <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-green-500 cursor-pointer" key={index}>
                                     <td scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white text-center dark:bg-gray-800">
                                         {_elt.name}
