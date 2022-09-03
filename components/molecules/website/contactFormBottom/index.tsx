@@ -8,6 +8,11 @@ interface Props {
     opts?: []
 }
 const ContactFormBottom: FC<Props> = ({ title, titleVie , opts = [] }) => {
+    // const options = opts.map(_elt => {
+    //     return {
+    //         value : _elt.
+    //     }
+    // })
     return (
         <section className="text-gray-600 body-font relative">
             <div className="container py-24 mx-auto">

@@ -10,11 +10,12 @@ interface Props {
     title?: String,
     titleVie?: String,
     schedules: [],
-    headerList: String[]
+    headerList: String[],
+    className?: string
 }
-const Schedule: FC<Props> = ({ type, schedules, title, titleVie, headerList }) => {
+const Schedule: FC<Props> = ({ type, schedules, title, titleVie, headerList , className}) => {
     return (
-        <div className='mt-4'>
+        <div className={`${className} mt-4`}>
             <Title title={title} titleVie={titleVie} />
             <div className="overflow-x-auto mt-2 relative shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
