@@ -42,7 +42,6 @@ const Home: NextPage = () => {
     const vieDoc = useAppSelector(getVieStartDoc)
     const engDoc = useAppSelector(getEngStartDoc)
     const handleNextPage = async (type: any) => {
-        console.log("type", type)
         if (type === VIE) {
             const start = Number(vieDoc + _LIMIT_START_DOC_SCHEDULE)
             const res = await scheduleService.getScheduleByCate(start, _LIMIT_START_DOC_SCHEDULE, VIE)
@@ -104,17 +103,16 @@ const Home: NextPage = () => {
                     <StaticSection/>
 
                     {/* COURSE SECTION  */}
-
                     <CourseSection title={"Vietnamese Lesson"} titleVie={'Khoá học tiếng việt'} type={'vietnamese'}
-                                   courses={vieLesson}/>
+                                   courses={vieLesson} animation={'animate__zoomIn'}/>
+
 
                     {/* COURSE SECTION  */}
-
                     <CourseSection title="English Lesson" type={'english'} courses={engLesson}
-                                   titleVie={'Khoá học tiếng việt'}/>
+                                   titleVie={'Khoá học tiếng việt'} animation={'animate__zoomIn'}/>
+
 
                     {/* SCHEUDLE SECTION */}
-
 
                     <Schedule type={VIE} schedules={vieSchedule} title="Schedule Vietnamese Class"
                               titleVie={"Lịch khai giảng lớp tiếng việt"} headerList={scheduleVieHeaderList}
@@ -141,10 +139,10 @@ const Home: NextPage = () => {
                     {/* FORM SECTION */}
 
                     <div className="grid grid-cols-2" id={'form-section-register'}>
-                        <ContactFormBottom title={"Sign up for a Vietnamese class"}
-                                           titleVie={"Đăng kí khoá học tiếng việt"}/>
-                        <ContactFormBottom title={"Sign up for an English class"}
-                                           titleVie={"Đăng kí khoá học tiếng anh"}/>
+                        <ContactFormBottom type={VIE} title={"Sign up for a Vietnamese class"}
+                                           titleVie={"Đăng kí khoá học tiếng việt"} opts={vieSchedule} animation={'animate__backInLeft'}/>
+                        <ContactFormBottom type={ENG} title={"Sign up for an English class"}
+                                           titleVie={"Đăng kí khoá học tiếng anh"} opts={engSchedule} animation={'animate__backInRight'}/>
                     </div>
 
                 </div>

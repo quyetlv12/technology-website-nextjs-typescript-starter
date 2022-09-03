@@ -27,6 +27,7 @@ export const API_COMMENT = '/comments'
 export const GREEN_COLOR = `[#4cb050]`
 export const ORANGE_COLOR = `[#ff9624]`
 export const BLUE_COLOR = `[#00c2ef]`
+export const API_REGISTER_COURSE ='/register-the-courses'
 export const VIE = 'VIE'
 export const ENG = 'ENG'
 export const BASE_API_URL = 'https://vls-api.herokuapp.com'

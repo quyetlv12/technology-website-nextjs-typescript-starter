@@ -10,6 +10,7 @@ import WebsiteLayout from "../layouts/website/websiteLayout";
 import { store } from "../redux/store";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../styles/globals.css";
+import "animate.css/animate.min.css";
 import "../styles/style.css";
 // use ngprogress create snipet loading
 NProgress.configure({ showSpinner: true });
