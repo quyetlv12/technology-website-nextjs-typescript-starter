@@ -3,7 +3,7 @@ import CardReview from '../../../atoms/cardReview'
 import Title from '../../../atoms/title'
 import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
-
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 interface Props {
     title: string,
     titleVie: string
@@ -56,19 +56,21 @@ const ReviewSection: FC<Props> = ({ title, titleVie }) => {
     return (
         <div className='mt-20'>
             <Title title={title} titleVie={titleVie} />
-            <Carousel ssr
-            swipeable={false}
-            draggable={false}
-                partialVisbile
-                itemClass="image-item"
-                infinite={true}
-                responsive={responsive} transitionDuration={500}  removeArrowOnDeviceType={['desktop' ,"tablet"]}  showDots={true} autoPlay={true} autoPlaySpeed={2000} shouldResetAutoplay={true}>
-               {
-                    reviewList.map((_elt, index) => (
-                        <CardReview key={index} avatar={_elt.avatar} content={_elt.content} username={_elt.username} job={_elt.job} />
-                    ))
-                }
-            </Carousel>
+            <AnimationOnScroll animateIn="animate__zoomIn">
+                <Carousel ssr
+                          swipeable={false}
+                          draggable={false}
+                          partialVisbile
+                          itemClass="image-item"
+                          infinite={true}
+                          responsive={responsive} transitionDuration={500}  removeArrowOnDeviceType={['desktop' ,"tablet"]}  showDots={true} autoPlay={true} autoPlaySpeed={2000} shouldResetAutoplay={true}>
+                    {
+                        reviewList.map((_elt, index) => (
+                            <CardReview key={index} avatar={_elt.avatar} content={_elt.content} username={_elt.username} job={_elt.job} />
+                        ))
+                    }
+                </Carousel>
+            </AnimationOnScroll>
 
         </div>
 
