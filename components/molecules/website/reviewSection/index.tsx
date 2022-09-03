@@ -65,7 +65,7 @@ const ReviewSection: FC<Props> = ({ title, titleVie }) => {
                 responsive={responsive} transitionDuration={500}  removeArrowOnDeviceType={['desktop' ,"tablet"]}  showDots={true} autoPlay={true} autoPlaySpeed={2000} shouldResetAutoplay={true}>
                {
                     reviewList.map((_elt, index) => (
-                        <CardReview avatar={_elt.avatar} content={_elt.content} username={_elt.username} job={_elt.job} />
+                        <CardReview key={index} avatar={_elt.avatar} content={_elt.content} username={_elt.username} job={_elt.job} />
                     ))
                 }
             </Carousel>
