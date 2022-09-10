@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images :{
-    domains: ['vls-api.herokuapp.com' , 'images.unsplash.com']
+    domains: ['vls-api.herokuapp.com' , 'images.unsplash.com' , 'firebasestorage.googleapis.com']
   },
   env: {
     // NODE_ENV: "development",

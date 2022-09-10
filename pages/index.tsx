@@ -138,7 +138,7 @@ const Home: NextPage = () => {
                                    titleVie={'Những gì khách hàng của chúng tôi nói'}/>
                     {/* FORM SECTION */}
 
-                    <div className="grid grid-cols-2" id={'form-section-register'}>
+                    <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2" id={'form-section-register'}>
                         <ContactFormBottom type={VIE} title={"Sign up for a Vietnamese class"}
                                            titleVie={"Đăng kí khoá học tiếng việt"} opts={vieSchedule} animation={'animate__backInLeft'}/>
                         <ContactFormBottom type={ENG} title={"Sign up for an English class"}
